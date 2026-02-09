@@ -1,8 +1,8 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
-import { useLanguage } from "@/context/LanguageContext";
+import { motion } from "framer-motion";
+
 
 const models = [
     {
@@ -38,7 +38,7 @@ const models = [
 ];
 
 export default function ModelsSection() {
-    const { t } = useLanguage();
+
     const [activeModel, setActiveModel] = useState(0);
 
     return (

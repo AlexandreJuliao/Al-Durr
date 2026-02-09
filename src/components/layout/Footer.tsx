@@ -2,11 +2,11 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useLanguage } from "@/context/LanguageContext";
+
 import Magnetic from "@/components/ui/Magnetic";
 
 export default function Footer() {
-    const { t } = useLanguage();
+
 
     return (
         <footer className="relative bg-aldurr-void text-white pt-32 pb-12 overflow-hidden border-t border-white/5">

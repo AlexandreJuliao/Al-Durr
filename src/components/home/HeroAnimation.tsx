@@ -2,14 +2,14 @@
 import React, { useLayoutEffect, useRef, useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useLanguage } from "@/context/LanguageContext";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 const FRAME_COUNT = 79;
 
 export default function HeroAnimation() {
-    const { t } = useLanguage();
+
     const triggerRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const imagesRef = useRef<HTMLImageElement[]>([]);

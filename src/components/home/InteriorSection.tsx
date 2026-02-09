@@ -12,7 +12,7 @@ export default function InteriorSection() {
         offset: ["start end", "end start"],
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
+
     const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
 
     return (
@@ -59,7 +59,7 @@ export default function InteriorSection() {
                     >
                         <div className="w-8 h-[1px] bg-aldurr-accent mb-4" />
                         <p className="font-light italic text-lg leading-relaxed text-white/90 font-serif">
-                            "A excelência não é um ato, mas um hábito gravado em cada detalhe."
+                            &quot;A excelência não é um ato, mas um hábito gravado em cada detalhe.&quot;
                         </p>
                     </motion.div>
                 </div>
