@@ -11,49 +11,64 @@ const teamMembers = [
         name: "Duarte Silva",
         role: "Lead Architect",
         bio: "O visionário por trás da estética Al Durr. Com 15 anos de experiência em design sustentável, Duarte funde a natureza com o betão.",
-        image: "/team-architect.png" // We have this one
+        image: "/team-architect.png"
     },
     {
         name: "Inês Santos",
         role: "Head of Engineering",
         bio: "A força que mantém tudo de pé. Especialista em estruturas modulares e sismo-resistentes, garantindo segurança sem comprometer a arte.",
-        image: "/team-engineer.png" // Hope to get this
+        image: "/team-engineer.png"
     },
     {
         name: "Pedro Costa",
         role: "Operations Director",
         bio: "O maestro da logística. Garante que do primeiro traço à chave na mão, o processo é fluido e o prazo é sagrado.",
-        image: "/team-ops.png" // Hope to get this
+        image: "/team-ops.png"
     }
 ];
 
 export default function ContactosPage() {
     return (
-        <main className="bg-aldurr-canvas min-h-screen relative text-white overflow-x-hidden">
+        <main className="bg-aldurr-void min-h-screen relative text-aldurr-text-body overflow-x-hidden">
             <Navbar />
 
+            {/* Ambient Background */}
+            <div className="fixed inset-0 pointer-events-none z-0">
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-aldurr-honey/5 rounded-full blur-[150px] -mr-64 -mt-64" />
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-aldurr-honey/5 rounded-full blur-[150px] -ml-64 -mb-64" />
+            </div>
+
             {/* Title Section */}
-            <section className="pt-40 pb-20 container mx-auto px-4 text-center">
+            <section className="pt-40 pb-20 container mx-auto px-4 text-center relative z-10">
+                <motion.span
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-aldurr-honey text-xs font-bold tracking-[0.5em] uppercase block mb-6 flex items-center justify-center gap-4"
+                >
+                    <span className="w-12 h-[1px] bg-aldurr-honey/30" />
+                    Equipa
+                    <span className="w-12 h-[1px] bg-aldurr-honey/30" />
+                </motion.span>
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="text-6xl md:text-9xl font-bold tracking-tight mb-6"
                 >
-                    THE <span className="text-aldurr-accent">MINDS.</span>
+                    THE <span className="text-transparent font-outline-2">MINDS.</span>
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.8 }}
-                    className="text-xl text-white/60 max-w-2xl mx-auto font-light"
+                    className="text-xl text-aldurr-text-body/50 max-w-2xl mx-auto font-light"
                 >
                     Conheça os artesãos que irão desenhar o seu legado.
                 </motion.p>
             </section>
 
             {/* Creative Team Grid */}
-            <section className="pb-32 container mx-auto px-4">
+            <section className="pb-32 container mx-auto px-4 relative z-10">
                 <div className="grid md:grid-cols-3 gap-8">
                     {teamMembers.map((member, i) => (
                         <motion.div
@@ -64,21 +79,23 @@ export default function ContactosPage() {
                             transition={{ delay: i * 0.2, duration: 0.8 }}
                             className="group relative"
                         >
-                            <div className="relative h-[500px] w-full overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 ease-out">
-                                <Image
-                                    src={member.image}
-                                    alt={member.name}
-                                    fill
-                                    className="object-cover object-center"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80" />
+                            <div className="relative h-[500px] w-full p-[1px] bg-gradient-to-b from-white/10 to-transparent rounded-sm group-hover:-translate-y-2 transition-transform duration-500 ease-out">
+                                <div className="relative w-full h-full bg-aldurr-stone rounded-sm overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                                    <Image
+                                        src={member.image}
+                                        alt={member.name}
+                                        fill
+                                        className="object-cover object-center"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-                                <div className="absolute bottom-0 left-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                    <p className="text-aldurr-accent text-xs font-bold tracking-[0.2em] uppercase mb-2">{member.role}</p>
-                                    <h3 className="text-3xl font-bold mb-4">{member.name}</h3>
-                                    <p className="text-white/60 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                        {member.bio}
-                                    </p>
+                                    <div className="absolute bottom-0 left-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 z-10">
+                                        <p className="text-aldurr-honey text-xs font-bold tracking-[0.2em] uppercase mb-2">{member.role}</p>
+                                        <h3 className="text-3xl font-bold mb-4 text-white">{member.name}</h3>
+                                        <p className="text-white/60 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                            {member.bio}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
@@ -87,41 +104,72 @@ export default function ContactosPage() {
             </section>
 
             {/* Split Contact Section */}
-            <section className="bg-white/5 border-t border-white/5">
+            <section className="bg-aldurr-stone border-t border-white/5 relative z-10">
                 <div className="container mx-auto px-4 py-24 grid lg:grid-cols-2 gap-20">
 
                     {/* Left: Info */}
                     <div className="space-y-12">
                         <div>
-                            <h2 className="text-5xl font-bold mb-8">Vamos conversar?</h2>
-                            <p className="text-white/60 text-lg leading-relaxed max-w-md">
+                            <span className="text-aldurr-honey text-xs font-bold tracking-[0.4em] uppercase block mb-6">
+                                Contacto
+                            </span>
+                            <h2 className="text-5xl font-bold mb-8 text-aldurr-text-heading">Vamos conversar?</h2>
+                            <p className="text-aldurr-text-body/50 text-lg leading-relaxed max-w-md font-light">
                                 Estamos prontos para ouvir a sua visão. Seja um terreno que já possui ou um sonho que ainda procura o lugar certo.
                             </p>
                         </div>
 
                         <div className="space-y-8">
-                            <div className="border-l-2 border-aldurr-accent pl-6">
-                                <p className="text-xs text-aldurr-accent uppercase tracking-widest mb-1">Email</p>
-                                <a href="mailto:info@aldurr.pt" className="text-2xl hover:text-aldurr-accent transition-colors">info@aldurr.pt</a>
+                            <div className="border-l-2 border-aldurr-honey/50 pl-6">
+                                <p className="text-xs text-aldurr-honey uppercase tracking-widest mb-1">Email</p>
+                                <a href="mailto:info@aldurr.pt" className="text-2xl text-aldurr-text-heading hover:text-aldurr-honey transition-colors">info@aldurr.pt</a>
                             </div>
-                            <div className="border-l-2 border-aldurr-accent pl-6">
-                                <p className="text-xs text-aldurr-accent uppercase tracking-widest mb-1">Telefone</p>
-                                <a href="tel:+351912345678" className="text-2xl hover:text-aldurr-accent transition-colors">+351 912 345 678</a>
+                            <div className="border-l-2 border-aldurr-honey/50 pl-6">
+                                <p className="text-xs text-aldurr-honey uppercase tracking-widest mb-1">Telefone</p>
+                                <a href="tel:+351912345678" className="text-2xl text-aldurr-text-heading hover:text-aldurr-honey transition-colors">+351 912 345 678</a>
                             </div>
-                            <div className="border-l-2 border-aldurr-accent pl-6">
-                                <p className="text-xs text-aldurr-accent uppercase tracking-widest mb-1">Studio</p>
-                                <p className="text-xl">Av. da Liberdade, 100<br />Lisboa, Portugal</p>
+                            <div className="border-l-2 border-aldurr-honey/50 pl-6">
+                                <p className="text-xs text-aldurr-honey uppercase tracking-widest mb-1">Studio</p>
+                                <p className="text-xl text-aldurr-text-heading">Av. da Liberdade, 100<br />Lisboa, Portugal</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="relative">
-                        <div className="bg-aldurr-surface/30 p-8 md:p-12 border border-white/10 rounded-sm backdrop-blur-sm shadow-2xl">
-                            <h3 className="text-2xl font-bold mb-8">Inicie o seu Legado.</h3>
+                    {/* Form */}
+                    <div className="relative z-20">
+                        <div className="bg-white/[0.03] border border-white/10 p-8 md:p-12 rounded-sm backdrop-blur-sm">
+                            <h3 className="text-2xl font-bold mb-8 text-aldurr-text-heading">Inicie o seu Legado.</h3>
                             <ContactForm />
                         </div>
                     </div>
 
+                </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section className="py-32 relative z-10 bg-aldurr-void overflow-hidden">
+                <div className="container mx-auto px-4 max-w-4xl">
+                    <div className="text-center mb-20">
+                        <span className="text-aldurr-honey text-xs font-bold tracking-[0.4em] uppercase block mb-4">Informação Útil</span>
+                        <h2 className="text-4xl md:text-6xl font-bold font-display leading-[0.9]">Perguntas <br /><span className="text-transparent font-outline-2 italic">Frequentes.</span></h2>
+                    </div>
+
+                    <div className="space-y-4">
+                        {[
+                            { q: "As casas Al Durr precisam de licenciamento?", a: "Sim, como qualquer construção permanente em Portugal, as nossas moradias requerem licenciamento camarário. Tratamos de todo o projeto de arquitetura e especialidades para submissão." },
+                            { q: "É possível construir em qualquer terreno?", a: "Desde que o terreno seja urbanizável ou tenha índice de construção, o nosso sistema adapta-se. Realizamos uma análise técnica gratuita ao seu terreno antes de avançarmos." },
+                            { q: "As casas são transportadas em que formato?", a: "Depende do modelo. A T1 é transportada em módulos quase finalizados, enquanto modelos maiores (T-Multi) são transportados em secções 3D otimizadas e finalizados no local em tempo recorde." },
+                            { q: "Aceitam financiamento bancário?", a: "Sim. Sendo construções permanentes com licença de habitabilidade, são elegíveis para Crédito Habitação tradicional em qualquer instituição bancária nacional." }
+                        ].map((faq, i) => (
+                            <div key={i} className="group p-8 border border-white/5 hover:border-white/10 transition-all duration-300 bg-white/[0.01]">
+                                <h4 className="text-lg font-bold text-white mb-4 flex justify-between items-center group-hover:text-aldurr-honey transition-colors">
+                                    {faq.q}
+                                    <span className="text-aldurr-honey text-xl">+</span>
+                                </h4>
+                                <p className="text-sm text-white/40 leading-relaxed max-w-2xl">{faq.a}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 

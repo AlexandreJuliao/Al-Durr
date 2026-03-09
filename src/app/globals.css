@@ -7,10 +7,29 @@
   --foreground: #FFFFFF;
 }
 
+@layer utilities {
+  .glassmorphism {
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    @apply backdrop-blur-lg border border-white/10;
+  }
+
+  .font-outline-2 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    color: #FFFFFF !important;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: none;
+  }
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   overflow-x: hidden;
+  @apply text-aldurr-text-body font-sans;
 }
 
 /* Lenis Scroll */

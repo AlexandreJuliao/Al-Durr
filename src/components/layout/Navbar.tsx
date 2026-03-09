@@ -40,17 +40,21 @@ export default function Navbar() {
     return (
         <nav
             className={`fixed top-0 w-full z-50 px-6 md:px-12 py-4 md:py-6 flex justify-between items-center transition-all duration-500 transform 
-            ${isVisible ? "translate-y-0" : "-translate-y-full"} 
-            ${isScrolled ? "backdrop-blur-md bg-aldurr-canvas/40 border-b border-white/5 shadow-2xl shadow-black/20" : "bg-transparent"}
+                ${isVisible ? "translate-y-0" : "-translate-y-full"} 
+                ${isScrolled ? "backdrop-blur-xl bg-black/80 border-b border-white/[0.05] shadow-2xl shadow-black/60" : "bg-transparent"}
             `}
         >
             {/* Logo */}
-            <Link href="/" className="text-xl md:text-2xl font-bold tracking-[0.2em] text-aldurr-text-heading z-10 cursor-pointer hover:opacity-80 transition-opacity">
-                AL DURR
+            <Link href="/" className="z-10 cursor-pointer hover:opacity-80 transition-opacity">
+                <img
+                    src="/logos/logo-white-horizontal.png"
+                    alt="Al Durr Logo"
+                    className="h-12 md:h-16 lg:h-20 w-auto object-contain"
+                />
             </Link>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex gap-12 text-xs tracking-[0.15em] text-aldurr-text-body font-medium">
+            <div className="hidden md:flex xl:gap-12 lg:gap-8 md:gap-4 text-[10px] lg:text-xs tracking-[0.15em] text-aldurr-text-body font-medium">
                 <Magnetic>
                     <Link href="/modelos" className="hover:text-aldurr-accent transition-colors duration-300">
                         {t.nav.models}
@@ -74,21 +78,19 @@ export default function Navbar() {
             </div>
 
             {/* Right Actions (Desktop) */}
-            <div className="hidden md:flex items-center gap-8 z-10">
+            <div className="hidden md:flex items-center xl:gap-8 lg:gap-6 md:gap-4 z-10">
                 {/* Language Switcher */}
-                <div className="flex items-center gap-3 text-xs font-mono">
+                <div className="flex items-center gap-2 lg:gap-3 text-[10px] lg:text-xs font-mono">
                     <button
                         onClick={() => switchLanguage("pt")}
-                        className={`transition-colors duration-300 hover:text-white ${locale === "pt" ? "text-aldurr-accent" : "text-aldurr-text-body"
-                            }`}
+                        className={`transition-all duration-300 hover:text-aldurr-text-body ${locale === "pt" ? "text-white font-bold" : "text-aldurr-text-muted hover:text-aldurr-text-body"}`}
                     >
                         PT
                     </button>
-                    <span className="text-aldurr-text-body opacity-20">|</span>
+                    <span className="text-aldurr-text-muted/30">|</span>
                     <button
                         onClick={() => switchLanguage("en")}
-                        className={`transition-colors duration-300 hover:text-white ${locale === "en" ? "text-aldurr-accent" : "text-aldurr-text-body"
-                            }`}
+                        className={`transition-all duration-300 hover:text-aldurr-text-body ${locale === "en" ? "text-white font-bold" : "text-aldurr-text-muted hover:text-aldurr-text-body"}`}
                     >
                         EN
                     </button>
@@ -97,7 +99,7 @@ export default function Navbar() {
                 {/* CTA */}
                 <Magnetic>
                     <Link href="/contactos">
-                        <button className="px-8 py-3 bg-aldurr-accent text-aldurr-canvas text-[10px] font-bold tracking-[0.2em] rounded-full hover:bg-white transition-colors duration-500 uppercase shadow-lg shadow-aldurr-accent/20">
+                        <button className="px-4 lg:px-8 py-2.5 lg:py-3 bg-gold-metallic text-aldurr-canvas text-[9px] lg:text-[10px] font-bold tracking-[0.2em] rounded-full hover:brightness-110 hover:shadow-[0_0_20px_rgba(45,90,66,0.4)] transition-all duration-500 uppercase shadow-lg shadow-aldurr-accent/20 whitespace-nowrap">
                             {t.nav.cta}
                         </button>
                     </Link>
@@ -118,25 +120,24 @@ export default function Navbar() {
 
             {/* Mobile Full Screen Menu Overlay */}
             <div
-                className={`fixed inset-0 bg-aldurr-canvas/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center transition-all duration-500 
-                ${isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+                className={`fixed inset-0 bg-aldurr-void/98 backdrop-blur-2xl z-40 flex flex-col items-center justify-center transition-all duration-700 
+                ${isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10 pointer-events-none"}`}
             >
                 <div className="flex flex-col items-center gap-10 text-2xl font-bold tracking-widest uppercase">
-                    <Link href="/modelos" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-aldurr-accent transition-colors scale-110 active:scale-95 duration-200">{t.nav.models}</Link>
-                    <Link href="/galeria" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-aldurr-accent transition-colors scale-110 active:scale-95 duration-200">{t.nav.gallery}</Link>
-                    <Link href="/processo" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-aldurr-accent transition-colors scale-110 active:scale-95 duration-200">{t.nav.process}</Link>
-                    <Link href="/contactos" onClick={() => setIsMobileMenuOpen(false)} className="text-aldurr-accent hover:text-white transition-colors scale-110 active:scale-95 duration-200">Contactos</Link>
+                    <Link href="/modelos" onClick={() => setIsMobileMenuOpen(false)} className={`${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} transition-all duration-500 delay-100 hover:text-aldurr-accent`}>{t.nav.models}</Link>
+                    <Link href="/galeria" onClick={() => setIsMobileMenuOpen(false)} className={`${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} transition-all duration-500 delay-200 hover:text-aldurr-accent`}>{t.nav.gallery}</Link>
+                    <Link href="/processo" onClick={() => setIsMobileMenuOpen(false)} className={`${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} transition-all duration-500 delay-300 hover:text-aldurr-accent`}>{t.nav.process}</Link>
+                    <Link href="/contactos" onClick={() => setIsMobileMenuOpen(false)} className={`${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} transition-all duration-500 delay-400 text-aldurr-accent`}>Contactos</Link>
                 </div>
-
 
                 {/* Mobile Language & CTA */}
                 <div className="mt-12 flex flex-col items-center gap-8">
                     <div className="flex items-center gap-6">
-                        <button onClick={() => switchLanguage("pt")} className={`${locale === "pt" ? "text-aldurr-accent" : "text-white/50"}`}>PT</button>
-                        <button onClick={() => switchLanguage("en")} className={`${locale === "en" ? "text-aldurr-accent" : "text-white/50"}`}>EN</button>
+                        <button onClick={() => switchLanguage("pt")} className={`${locale === "pt" ? "text-white font-bold" : "text-aldurr-text-muted"}`}>PT</button>
+                        <button onClick={() => switchLanguage("en")} className={`${locale === "en" ? "text-white font-bold" : "text-aldurr-text-muted"}`}>EN</button>
                     </div>
                     <Link href="/contactos" onClick={() => setIsMobileMenuOpen(false)}>
-                        <button className="px-10 py-4 bg-white/5 border border-white/10 text-white rounded-full uppercase text-xs tracking-widest">
+                        <button className="px-10 py-4 bg-white/5 border border-white/10 text-aldurr-text-body rounded-full uppercase text-xs tracking-widest">
                             {t.nav.cta}
                         </button>
                     </Link>

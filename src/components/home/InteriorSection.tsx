@@ -16,9 +16,9 @@ export default function InteriorSection() {
     const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
 
     return (
-        <section ref={containerRef} className="relative py-32 bg-gradient-to-b from-aldurr-earth to-aldurr-canvas text-white overflow-hidden">
+        <section ref={containerRef} className="relative py-32 bg-aldurr-void text-aldurr-text-heading overflow-hidden">
             {/* Warm overlay for "Honey" feel */}
-            <div className="absolute inset-0 bg-aldurr-honey/10 pointer-events-none" />
+            <div className="absolute inset-0 bg-aldurr-honey/5 pointer-events-none" />
             {/* Soft Ambient Light */}
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-aldurr-accent/5 blur-[150px] rounded-full pointer-events-none" />
 
@@ -44,9 +44,9 @@ export default function InteriorSection() {
                             />
                         </motion.div>
 
-                        {/* Cinematic Vignette */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-aldurr-canvas via-transparent to-transparent opacity-60" />
-                        <div className="absolute inset-0 bg-gradient-to-r from-aldurr-canvas/50 via-transparent to-transparent opacity-40" />
+                        {/* Cinematic Vignette - transition to dark ambiance */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-aldurr-void via-transparent to-transparent opacity-80" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-aldurr-void/60 via-transparent to-transparent opacity-60" />
                     </motion.div>
 
                     {/* Glass Detail Card - Floating */}
@@ -55,10 +55,10 @@ export default function InteriorSection() {
                         whileInView={{ opacity: 1, x: 0, y: 0 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="absolute -bottom-8 -right-4 md:-right-12 bg-aldurr-surface/40 backdrop-blur-xl border border-white/10 p-8 max-w-sm hidden md:block shadow-2xl"
+                        className="absolute -bottom-8 -right-4 md:-right-12 bg-white/[0.02] backdrop-blur-xl border border-white/10 p-8 max-w-sm hidden md:block shadow-xl rounded-sm"
                     >
                         <div className="w-8 h-[1px] bg-aldurr-accent mb-4" />
-                        <p className="font-light italic text-lg leading-relaxed text-white/90 font-serif">
+                        <p className="font-light italic text-lg leading-relaxed text-aldurr-text-heading font-serif">
                             &quot;A excelência não é um ato, mas um hábito gravado em cada detalhe.&quot;
                         </p>
                     </motion.div>
@@ -73,10 +73,10 @@ export default function InteriorSection() {
                         viewport={{ once: true }}
                     >
                         <span className="text-aldurr-accent text-xs font-bold tracking-[0.4em] uppercase block mb-6 flex items-center gap-3">
-                            <span className="w-2 h-2 rounded-full bg-aldurr-accent"></span>
+                            <span className="w-2 h-2 bg-aldurr-accent"></span>
                             {t.interiors.subtitle}
                         </span>
-                        <h2 className="text-5xl md:text-6xl font-bold leading-none mb-6">
+                        <h2 className="text-5xl md:text-6xl font-bold leading-none mb-6 font-display">
                             {t.interiors.title}
                         </h2>
                         <p className="text-lg text-aldurr-text-body font-light leading-relaxed">
@@ -97,7 +97,7 @@ export default function InteriorSection() {
                                 <div className="text-aldurr-accent/30 font-serif text-2xl group-hover:text-aldurr-accent transition-colors duration-300">
                                     0{idx + 1}
                                 </div>
-                                <span className="text-xl font-light text-white/80 group-hover:text-white group-hover:pl-2 transition-all duration-300">
+                                <span className="text-xl font-light text-aldurr-text-body/80 group-hover:text-white group-hover:pl-2 transition-all duration-300">
                                     {item}
                                 </span>
                             </motion.div>
@@ -109,7 +109,7 @@ export default function InteriorSection() {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ delay: 0.6 }}
-                        className="px-8 py-4 border border-aldurr-accent/30 text-aldurr-accent text-xs font-bold tracking-[0.2em] uppercase hover:bg-aldurr-accent hover:text-aldurr-canvas transition-all duration-500"
+                        className="px-8 py-4 bg-white/5 border border-white/20 text-aldurr-text-body text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-gold-metallic hover:text-aldurr-void hover:border-transparent transition-all duration-500 rounded-sm"
                     >
                         Explore Interiors
                     </motion.button>

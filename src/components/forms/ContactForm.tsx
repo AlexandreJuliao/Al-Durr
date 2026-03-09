@@ -25,7 +25,7 @@ export default function ContactForm() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full bg-aldurr-canvas border border-white/10 p-4 text-white focus:border-aldurr-accent outline-none transition-colors"
+                        className="w-full bg-white/[0.03] border border-white/10 p-4 text-white focus:border-aldurr-honey outline-none transition-colors rounded-sm"
                         placeholder="Seu nome completo"
                     />
                 </div>
@@ -36,7 +36,7 @@ export default function ContactForm() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full bg-aldurr-canvas border border-white/10 p-4 text-white focus:border-aldurr-accent outline-none transition-colors"
+                        className="w-full bg-white/[0.03] border border-white/10 p-4 text-white focus:border-aldurr-honey outline-none transition-colors rounded-sm"
                         placeholder="+351 ..."
                     />
                 </div>
@@ -49,7 +49,7 @@ export default function ContactForm() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-aldurr-canvas border border-white/10 p-4 text-white focus:border-aldurr-accent outline-none transition-colors"
+                    className="w-full bg-white/[0.03] border border-white/10 p-4 text-white focus:border-aldurr-honey outline-none transition-colors rounded-sm"
                     placeholder="seu.email@exemplo.com"
                 />
             </div>
@@ -61,7 +61,7 @@ export default function ContactForm() {
                         name="model"
                         value={formData.model}
                         onChange={handleChange}
-                        className="w-full bg-aldurr-canvas border border-white/10 p-4 text-white focus:border-aldurr-accent outline-none transition-colors appearance-none"
+                        className="w-full bg-white/[0.03] border border-white/10 p-4 text-white focus:border-aldurr-honey outline-none transition-colors appearance-none rounded-sm"
                     >
                         <option value="t1">T1 Studio</option>
                         <option value="t2">T2 Family</option>
@@ -75,16 +75,16 @@ export default function ContactForm() {
                         name="location"
                         value={formData.location}
                         onChange={handleChange}
-                        className="w-full bg-aldurr-canvas border border-white/10 p-4 text-white focus:border-aldurr-accent outline-none transition-colors"
+                        className="w-full bg-white/[0.03] border border-white/10 p-4 text-white focus:border-aldurr-honey outline-none transition-colors rounded-sm"
                         placeholder="Ex: Comporta, Gerês..."
                     />
                 </div>
             </div>
 
             <div className="space-y-4 pt-4 border-t border-white/5">
-                <label className="text-xs uppercase tracking-widest text-aldurr-accent font-bold">Situação do Terreno</label>
+                <label className="text-xs uppercase tracking-widest text-aldurr-honey font-bold">Situação do Terreno</label>
                 <div className="grid md:grid-cols-2 gap-4">
-                    <label className={`cursor-pointer border p-4 transition-all duration-300 ${formData.landStatus === 'tenho_terreno' ? 'border-aldurr-accent bg-aldurr-accent/10' : 'border-white/10 hover:border-white/30'}`}>
+                    <label className={`cursor-pointer border p-4 transition-all duration-300 rounded-sm ${formData.landStatus === 'tenho_terreno' ? 'border-aldurr-honey bg-aldurr-honey/5' : 'border-white/10 hover:border-white/30 bg-white/[0.02]'}`}>
                         <input
                             type="radio"
                             name="landStatus"
@@ -97,7 +97,7 @@ export default function ContactForm() {
                         <div className="text-[10px] text-white/50">Procuro apenas a casa</div>
                     </label>
 
-                    <label className={`cursor-pointer border p-4 transition-all duration-300 ${formData.landStatus === 'ajuda_procurar' ? 'border-aldurr-accent bg-aldurr-accent/10' : 'border-white/10 hover:border-white/30'}`}>
+                    <label className={`cursor-pointer border p-4 transition-all duration-300 rounded-sm ${formData.landStatus === 'ajuda_procurar' ? 'border-aldurr-honey bg-aldurr-honey/5' : 'border-white/10 hover:border-white/30 bg-white/[0.02]'}`}>
                         <input
                             type="radio"
                             name="landStatus"
@@ -115,7 +115,7 @@ export default function ContactForm() {
             <div className="space-y-2">
                 <label className="text-xs uppercase tracking-widest text-white/50">Mensagem (Opcional)</label>
                 <textarea
-                    className="w-full bg-aldurr-canvas border border-white/10 p-4 text-white focus:border-aldurr-accent outline-none transition-colors h-32"
+                    className="w-full bg-white/[0.03] border border-white/10 p-4 text-white focus:border-aldurr-honey outline-none transition-colors h-32 rounded-sm"
                     placeholder="Diga-nos mais sobre o seu projeto..."
                 />
             </div>

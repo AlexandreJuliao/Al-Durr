@@ -17,7 +17,7 @@ export default function PrismSection() {
     const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
 
     return (
-        <section ref={containerRef} className="relative h-[150vh] bg-aldurr-canvas border-t border-aldurr-honey/30">
+        <section ref={containerRef} className="relative h-[150vh] bg-aldurr-void border-t border-white/5">
             <div className="absolute inset-0 bg-aldurr-honey/5 pointer-events-none" />
             {/* Ambient Background Glow */}
             <div className="absolute top-1/4 left-0 w-1/2 h-1/2 bg-aldurr-accent/5 blur-[120px] rounded-full pointer-events-none" />
@@ -35,7 +35,7 @@ export default function PrismSection() {
                             <span className="w-8 h-[1px] bg-aldurr-accent"></span>
                             {t.prism.subtitle}
                         </span>
-                        <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-[0.9] tracking-tight">
+                        <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-[0.9] tracking-tight font-display">
                             {t.prism.title}
                         </h2>
                         <p className="text-lg md:text-xl text-aldurr-text-body/80 max-w-lg leading-relaxed font-light">
@@ -53,7 +53,7 @@ export default function PrismSection() {
                                 viewport={{ once: true }}
                                 className="group cursor-default"
                             >
-                                <h3 className="text-2xl font-light tracking-wide text-white group-hover:text-aldurr-accent transition-colors duration-500">
+                                <h3 className="text-2xl font-light tracking-wide text-aldurr-text-heading group-hover:text-aldurr-accent transition-colors duration-500">
                                     {feature}
                                 </h3>
                             </motion.div>
@@ -67,38 +67,46 @@ export default function PrismSection() {
                     className="order-1 md:order-2 relative h-[500px] md:h-[800px] w-full flex items-center justify-center"
                 >
                     <div className="relative w-full h-full">
-                        {/* Main Image */}
+                        {/* Main Image — new A-frame house with structural frame */}
                         <Image
-                            src="/prism-geometry.jpg"
-                            alt="Al Durr Model Exterior"
+                            src="/prism-house-new.png"
+                            alt="Al Durr A-Frame Model with Structural Frame"
                             fill
                             sizes="(max-width: 768px) 100vw, 50vw"
-                            className="object-contain drop-shadow-2xl z-10 opacity-90"
+                            className="object-contain drop-shadow-2xl z-10"
+                            priority
                         />
 
-                        {/* Decorative Elements behind */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-gradient-radial from-aldurr-accent/10 to-transparent blur-3xl -z-10" />
+                        {/* Ambient glow behind image */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-radial from-aldurr-accent/15 to-transparent blur-3xl -z-10" />
 
-                        {/* SVG Overlay - Geometric lines */}
-                        <svg className="absolute inset-0 w-full h-full z-20 pointer-events-none opacity-20 mix-blend-screen" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        {/* SVG Overlay — geometric lines IN FRONT of the image (z-20) */}
+                        <svg className="absolute inset-0 w-full h-full z-20 pointer-events-none opacity-30 mix-blend-overlay" viewBox="0 0 100 100" preserveAspectRatio="none">
                             <motion.line
-                                x1="50" y1="10" x2="50" y2="90"
-                                stroke="currentColor"
-                                strokeWidth="0.2"
-                                className="text-aldurr-accent"
+                                x1="50" y1="5" x2="50" y2="95"
+                                stroke="#C69C6D"
+                                strokeWidth="0.15"
                                 initial={{ pathLength: 0 }}
                                 whileInView={{ pathLength: 1 }}
                                 transition={{ duration: 1.5, ease: "easeInOut" }}
                             />
                             <motion.path
-                                d="M20,90 L42,10 L58,10 L80,90 Z"
+                                d="M18,92 L40,8 L60,8 L82,92 Z"
                                 fill="none"
-                                stroke="currentColor"
-                                strokeWidth="0.2"
-                                className="text-white"
+                                stroke="white"
+                                strokeWidth="0.15"
                                 initial={{ pathLength: 0 }}
                                 whileInView={{ pathLength: 1 }}
                                 transition={{ duration: 2, ease: "easeInOut", delay: 0.5 }}
+                            />
+                            <motion.line
+                                x1="18" y1="92" x2="82" y2="92"
+                                stroke="#C69C6D"
+                                strokeWidth="0.1"
+                                strokeDasharray="1 2"
+                                initial={{ pathLength: 0 }}
+                                whileInView={{ pathLength: 1 }}
+                                transition={{ duration: 1.2, ease: "easeInOut", delay: 1.2 }}
                             />
                         </svg>
                     </div>

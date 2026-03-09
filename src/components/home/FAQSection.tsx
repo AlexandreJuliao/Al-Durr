@@ -24,28 +24,34 @@ const faqs = [
 export default function FAQSection() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
+    console.log("FAQSection Render", openIndex);
     return (
-        <section className="relative py-24 bg-aldurr-canvas text-white border-t border-white/5">
+        <section className="relative py-24 md:py-32 bg-gradient-to-b from-aldurr-void to-aldurr-void text-aldurr-text-body border-t border-white/5">
+            <div className="absolute inset-0 z-0">
+                <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-aldurr-honey/5 blur-[120px] rounded-full pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-aldurr-honey/5 blur-[120px] rounded-full pointer-events-none" />
+            </div>
+
             <div className="container mx-auto px-4 max-w-4xl relative z-10">
-                <div className="text-center mb-16">
-                    <span className="text-aldurr-accent text-xs font-bold tracking-[0.4em] uppercase block mb-4">
+                <div className="text-center mb-24">
+                    <span className="text-aldurr-honey text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">
                         Dúvidas Comuns
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-white">
-                        Esclarecimentos
+                    <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight font-display">
+                        <span className="text-transparent font-outline-2">Esclarecimentos</span>
                     </h2>
                 </div>
 
                 <div className="space-y-4">
                     {faqs.map((faq, i) => (
-                        <div key={i} className="border-b border-white/10">
+                        <div key={i} className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transition-colors hover:border-white/20 hover:bg-white/10">
                             <button
                                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                                className="w-full flex justify-between items-center py-6 text-left hover:text-aldurr-accent transition-colors"
+                                className="w-full flex justify-between items-center px-8 py-6 text-left group"
                             >
-                                <span className="text-lg md:text-xl font-light">{faq.q}</span>
-                                <span className="text-aldurr-accent text-2xl">
-                                    {openIndex === i ? "−" : "+"}
+                                <span className={`text-lg md:text-xl font-light transition-colors ${openIndex === i ? 'text-aldurr-honey' : 'text-aldurr-text-body group-hover:text-aldurr-text-muted'}`}>{faq.q}</span>
+                                <span className={`text-2xl transition-transform duration-300 font-light ${openIndex === i ? 'text-aldurr-honey rotate-45' : 'text-aldurr-text-muted'}`}>
+                                    +
                                 </span>
                             </button>
                             <AnimatePresence>
@@ -56,9 +62,12 @@ export default function FAQSection() {
                                         exit={{ height: 0, opacity: 0 }}
                                         className="overflow-hidden"
                                     >
-                                        <p className="pb-6 text-white/50 text-base font-light leading-relaxed max-w-2xl">
-                                            {faq.a}
-                                        </p>
+                                        <div className="px-8 pb-8">
+                                            <div className="w-12 h-[1px] bg-aldurr-honey/50 mb-6" />
+                                            <p className="text-aldurr-text-muted text-base md:text-lg font-light leading-relaxed max-w-2xl">
+                                                {faq.a}
+                                            </p>
+                                        </div>
                                     </motion.div>
                                 )}
                             </AnimatePresence>
