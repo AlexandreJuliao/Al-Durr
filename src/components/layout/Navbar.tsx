@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import Magnetic from "@/components/ui/Magnetic";
 
@@ -45,11 +46,13 @@ export default function Navbar() {
             `}
         >
             {/* Logo */}
-            <Link href="/" className="z-10 cursor-pointer hover:opacity-80 transition-opacity">
-                <img
+            <Link href="/" className="z-10 cursor-pointer hover:opacity-80 transition-opacity relative h-12 md:h-16 lg:h-20 w-40 md:w-52 lg:w-64">
+                <Image
                     src="/logos/logo-white-horizontal.png"
                     alt="Al Durr Logo"
-                    className="h-12 md:h-16 lg:h-20 w-auto object-contain"
+                    fill
+                    className="object-contain"
+                    priority
                 />
             </Link>
 

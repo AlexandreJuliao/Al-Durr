@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, MotionValue } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
 const FRAME_COUNT = 94;
@@ -148,7 +148,7 @@ export default function ProcessSection() {
 
                 <div className="container mx-auto px-6 relative z-20 h-full flex flex-col justify-center">
                     <div className="max-w-4xl relative h-[60vh] md:h-[400px]">
-                        {steps.map((step, idx) => (
+                        {steps.map((step) => (
                             <StepItem
                                 key={step.id}
                                 step={step}
@@ -175,7 +175,17 @@ export default function ProcessSection() {
     );
 }
 
-function StepItem({ step, progress }: { step: any, progress: any }) {
+interface Step {
+    id: string;
+    title: string;
+    desc: string;
+    time: string;
+    start: number;
+    peak: number;
+    end: number;
+}
+
+function StepItem({ step, progress }: { step: Step, progress: MotionValue<number> }) {
     const { start, peak, end } = step;
     const isLast = step.id === "PHASE_04";
 
@@ -224,7 +234,7 @@ function StepItem({ step, progress }: { step: any, progress: any }) {
     );
 }
 
-function ProgressDot({ active, range }: { active: any, range: [number, number] }) {
+function ProgressDot({ active, range }: { active: MotionValue<number>, range: [number, number] }) {
     const opacity = useTransform(active, [range[0], range[0] + 0.05, range[1] - 0.05, range[1]], [0.2, 1, 1, 0.2]);
     const scale = useTransform(active, [range[0], range[0] + 0.05, range[1] - 0.05, range[1]], [0.8, 1.1, 1.1, 0.8]);
 
@@ -236,7 +246,7 @@ function ProgressDot({ active, range }: { active: any, range: [number, number] }
     );
 }
 
-function ContinueIndicator({ progress }: { progress: any }) {
+function ContinueIndicator({ progress }: { progress: MotionValue<number> }) {
     const { t } = useLanguage();
     const opacity = useTransform(progress, [0.85, 0.92], [0, 1]);
     const y = useTransform(progress, [0.85, 0.92], [20, 0]);

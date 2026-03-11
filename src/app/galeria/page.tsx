@@ -150,7 +150,7 @@ export default function GaleriaPage() {
             <section className="py-40 relative z-10 text-center">
                 <div className="container mx-auto px-4 max-w-4xl">
                     <p className="text-2xl md:text-4xl text-white/40 italic font-light leading-relaxed">
-                        "A arquitetura Al Durr não captura apenas a luz; ela captura o <span className="text-aldurr-honey font-bold">sentimento de pertença</span> ao lugar mais sagrado do mundo: o seu lar."
+                        &quot;A arquitetura Al Durr não captura apenas a luz; ela captura o <span className="text-aldurr-honey font-bold">sentimento de pertença</span> ao lugar mais sagrado do mundo: o seu lar.&quot;
                     </p>
                     <div className="w-20 h-[1px] bg-aldurr-honey/30 mx-auto mt-12" />
                 </div>

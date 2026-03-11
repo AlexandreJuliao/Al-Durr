@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const team = [
@@ -48,10 +49,11 @@ export default function TeamSection() {
                             className="bg-white/[0.02] backdrop-blur-xl p-10 border border-white/10 rounded-sm hover:bg-white-[0.05] hover:border-aldurr-honey/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] transition-all duration-500 group"
                         >
                             <div className="w-20 h-20 relative mb-8 group-hover:shadow-[0_0_20px_rgba(198,156,109,0.5)] transition-all duration-500 rounded-sm overflow-hidden border border-white/10">
-                                <img
+                                <Image
                                     src={i === 0 ? "/team-architect.png" : i === 1 ? "/team-engineer.png" : "/team-ops.png"}
                                     alt={member.name}
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                 />
                             </div>
                             <h3 className="text-2xl font-bold text-aldurr-text-body mb-2 group-hover:text-aldurr-honey transition-colors">{member.name}</h3>
