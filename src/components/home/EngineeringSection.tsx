@@ -84,7 +84,7 @@ export default function EngineeringSection() {
                         />
 
                         {/* Blueprint Image */}
-                        <div className="relative w-full h-full md:h-[95%] p-4 md:p-0 flex items-center justify-center md:justify-start md:-translate-x-12 lg:-translate-x-32 transition-transform duration-500">
+                        <div className="relative w-full h-full md:h-[95%] p-4 md:p-0 flex items-center justify-center transition-transform duration-500">
                             <motion.div
                                 initial={{ filter: 'brightness(0.3) contrast(1.2)' }}
                                 whileInView={{ filter: 'brightness(1.1) contrast(1.1)' }}
@@ -95,7 +95,7 @@ export default function EngineeringSection() {
                                     src="/images/trapezoidal-engineering-blueprint.png"
                                     alt="Al Durr Engineering Skeleton"
                                     fill
-                                    className="object-contain md:object-left drop-shadow-[0_0_120px_rgba(198,156,109,0.15)] grayscale transition-all duration-1000"
+                                    className="object-contain object-center drop-shadow-[0_0_120px_rgba(198,156,109,0.15)] grayscale transition-all duration-1000"
                                 />
                             </motion.div>
                         </div>

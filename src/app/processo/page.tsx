@@ -3,14 +3,6 @@ import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LandServiceSection from "@/components/home/LandServiceSection";
-import { motion } from "framer-motion";
-
-const steps = [
-    { step: "01", title: "Design & Terreno", desc: "Análise do terreno e adaptação do projeto à topografia e exposição solar ideal." },
-    { step: "02", title: "Produção Off-site", desc: "A sua casa é construída a 100% em fábrica com controlo de qualidade rigoroso." },
-    { step: "03", title: "Transporte", desc: "Logística especializada desde a fábrica até ao local de implantação." },
-    { step: "04", title: "Instalação", desc: "Montagem final em menos de 1 semana. Chave na mão." },
-];
 
 export default function ProcessoPage() {
     return (

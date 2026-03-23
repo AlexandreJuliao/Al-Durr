@@ -1,0 +1,18 @@
+  ▲ Next.js 14.2.16
+  - Local:        http://localhost:3005
+
+ ✓ Starting...
+Error: Invalid package config /Users/julas/Desktop/Websites Geral/Al Durr/node_modules/next/dist/compiled/babel/package.json.
+    at Object.getNearestParentPackageJSON (node:internal/modules/package_json_reader:189:33)
+    at Object..js (node:internal/modules/cjs/loader:1866:29)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1504:12)
+    at mod.require (/Users/julas/Desktop/Websites Geral/Al Durr/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (/Users/julas/Desktop/Websites Geral/Al Durr/node_modules/next/dist/client/components/react-dev-overlay/server/shared.js:39:20) {
+  code: 'ERR_INVALID_PACKAGE_CONFIG'
+}
+[?25h

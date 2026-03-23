@@ -255,7 +255,6 @@ function ProgressDot({ active, range }: { active: MotionValue<number>, range: [n
 }
 
 function ContinueIndicator({ progress }: { progress: MotionValue<number> }) {
-    const { t } = useLanguage();
     const opacity = useTransform(progress, [0, 0.02, 0.98, 1], [0, 1, 1, 0]);
 
     return (
