@@ -28,25 +28,27 @@ const modelsFull = [
         image: "/t1-model.jpg"
     },
     {
-        id: "t2",
+        id: "t2-family",
         title: "T2 FAMILY",
-        subtitle: "Espaço para Criar Memórias",
-        price: "189.900",
-        area: "75m²",
-        desc: "A evolução natural. O T2 Family mantém a elegância da geometria Prisma mas expande o volume para acomodar uma família pequena com total conforto. Dois quartos privados e uma área social generosa.",
+        subtitle: "Expansão Modular",
+        price: "199.900",
+        area: "65m²",
+        desc: "Com 35m² no piso inferior e um espaçoso mezzanine de 30m², ideal para pequenas famílias (incluindo berçário) ou refúgios com máximo conforto e integração fluida com a natureza.",
+        image: "/t2-model-new.png",
         specs: [
-            { label: "Área Bruta", value: "75 m²" },
+            { label: "Área Bruta", value: "65 m²" },
             { label: "Pé Direito", value: "6.0 m" },
-            { label: "Quartos", value: "2" },
+            { label: "Quartos", value: "1 Casal + Berçário/Solteiro" },
             { label: "WC", value: "1 Premium" }
         ],
         features: [
+            "Área Total: 65m² (35m² + 30m² mezzanine)",
+            "1 Quarto Casal + Berçário/Quarto Aberto + 1 WC + 10m² Varanda",
             "Suite principal no piso térreo",
             "Quarto secundário em Mezzanine",
             "Área de arrumos técnica integrada",
             "Iluminação LED arquitetural"
-        ],
-        image: "/t2-model.jpg"
+        ]
     },
     {
         id: "custom",
@@ -106,7 +108,7 @@ export default function ModelosPage() {
                         className="py-24 border-t border-white/5"
                     >
                         <div className="container mx-auto px-4">
-                            <div className={`flex flex-col lg:flex-row gap-16 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+                            <div className={`flex flex-col-reverse lg:flex-row gap-16 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
 
                                 {/* Info */}
                                 <div className="flex-1 space-y-8">

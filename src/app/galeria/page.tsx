@@ -42,7 +42,7 @@ export default function GaleriaPage() {
                     {/* Living Room - Large Feature */}
                     <div className="md:col-span-2 relative h-[300px] md:h-[600px] group border border-white/5 rounded-sm overflow-hidden">
                         <div className="relative w-full h-full">
-                            <Image src="/interior-living.png" alt="Living Room Luxury" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                            <Image src="/interior-living-new.png" alt="Living Room Luxury" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                             <div className="absolute bottom-8 left-8 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                                 Living Room
@@ -65,7 +65,7 @@ export default function GaleriaPage() {
 
                     {/* Kitchen */}
                     <div className="relative h-[300px] group border border-white/5 rounded-sm overflow-hidden">
-                        <Image src="/interior-kitchen.png" alt="Minimalist Kitchen" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                        <Image src="/interior-kitchen-new.png" alt="Minimalist Kitchen" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                         <div className="absolute bottom-8 left-8 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">Kitchen</div>
                     </div>
@@ -138,7 +138,7 @@ export default function GaleriaPage() {
                                     <Image src="/t-multi-model.jpg" alt="Material 3" fill className="object-cover" />
                                 </div>
                                 <div className="h-[300px] relative rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                                    <Image src="/interior-living.png" alt="Material 4" fill className="object-cover" />
+                                    <Image src="/interior-living-new.png" alt="Material 4" fill className="object-cover" />
                                 </div>
                             </div>
                         </div>

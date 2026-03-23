@@ -65,7 +65,7 @@ export default function InvestmentSection() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="p-6 bg-white/[0.02] border border-white/5 rounded-sm hover:border-aldurr-honey/30 transition-colors group"
+                                    className="p-6 bg-white/[0.04] backdrop-blur-md border border-white/5 rounded-sm hover:border-aldurr-honey/30 transition-all duration-300 group shadow-lg"
                                 >
                                     <div className="w-10 h-10 bg-aldurr-honey/10 flex items-center justify-center text-aldurr-honey mb-4 group-hover:scale-110 transition-transform">
                                         {feature.icon}
@@ -84,7 +84,7 @@ export default function InvestmentSection() {
                         viewport={{ once: true }}
                         className="relative"
                     >
-                        <div className="aspect-[4/5] bg-aldurr-honey/5 border border-white/10 p-12 flex flex-col justify-between overflow-hidden group">
+                        <div className="aspect-[4/5] bg-aldurr-canvas/20 backdrop-blur-2xl border border-white/10 p-12 flex flex-col justify-between overflow-hidden group shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-aldurr-honey/20 blur-[60px]" />
 
                             <div>
@@ -99,7 +99,7 @@ export default function InvestmentSection() {
                                 style={{ clipPath: 'polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%)' }}
                             >
                                 <Image
-                                    src="/investment-aframe-night.png"
+                                    src="/investment-aframe-night-new.png"
                                     alt="A-Frame property investment at night"
                                     fill
                                     sizes="(max-width: 768px) 100vw, 40vw"

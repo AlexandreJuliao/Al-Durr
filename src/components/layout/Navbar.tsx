@@ -42,7 +42,7 @@ export default function Navbar() {
         <nav
             className={`fixed top-0 w-full z-50 px-6 md:px-12 py-4 md:py-6 flex justify-between items-center transition-all duration-500 transform 
                 ${isVisible ? "translate-y-0" : "-translate-y-full"} 
-                ${isScrolled ? "backdrop-blur-xl bg-black/80 border-b border-white/[0.05] shadow-2xl shadow-black/60" : "bg-transparent"}
+                ${isScrolled ? "backdrop-blur-2xl bg-black/40 border-b border-white/[0.05] shadow-2xl shadow-black/40" : "bg-transparent"}
             `}
         >
             {/* Logo */}
@@ -123,10 +123,10 @@ export default function Navbar() {
 
             {/* Mobile Full Screen Menu Overlay */}
             <div
-                className={`fixed inset-0 bg-aldurr-void/98 backdrop-blur-2xl z-40 flex flex-col items-center justify-center transition-all duration-700 
-                ${isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10 pointer-events-none"}`}
+                className={`fixed inset-0 bg-aldurr-void/95 backdrop-blur-3xl z-40 flex flex-col items-center justify-start pt-32 pb-12 transition-all duration-700 h-[100dvh] w-full overflow-y-auto
+                ${isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8 pointer-events-none"}`}
             >
-                <div className="flex flex-col items-center gap-10 text-2xl font-bold tracking-widest uppercase">
+                <div className="flex flex-col items-center gap-10 text-xl md:text-2xl font-bold tracking-widest uppercase my-auto w-full">
                     <Link href="/modelos" onClick={() => setIsMobileMenuOpen(false)} className={`${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} transition-all duration-500 delay-100 hover:text-aldurr-accent`}>{t.nav.models}</Link>
                     <Link href="/galeria" onClick={() => setIsMobileMenuOpen(false)} className={`${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} transition-all duration-500 delay-200 hover:text-aldurr-accent`}>{t.nav.gallery}</Link>
                     <Link href="/processo" onClick={() => setIsMobileMenuOpen(false)} className={`${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} transition-all duration-500 delay-300 hover:text-aldurr-accent`}>{t.nav.process}</Link>
@@ -134,13 +134,13 @@ export default function Navbar() {
                 </div>
 
                 {/* Mobile Language & CTA */}
-                <div className="mt-12 flex flex-col items-center gap-8">
+                <div className="mt-12 flex flex-col items-center gap-8 pb-8">
                     <div className="flex items-center gap-6">
                         <button onClick={() => switchLanguage("pt")} className={`${locale === "pt" ? "text-white font-bold" : "text-aldurr-text-muted"}`}>PT</button>
                         <button onClick={() => switchLanguage("en")} className={`${locale === "en" ? "text-white font-bold" : "text-aldurr-text-muted"}`}>EN</button>
                     </div>
                     <Link href="/contactos" onClick={() => setIsMobileMenuOpen(false)}>
-                        <button className="px-10 py-4 bg-white/5 border border-white/10 text-aldurr-text-body rounded-full uppercase text-xs tracking-widest">
+                        <button className="px-10 py-4 bg-white/5 border border-white/10 text-white rounded-full uppercase text-xs tracking-widest hover:bg-aldurr-honey hover:text-aldurr-void transition-colors">
                             {t.nav.cta}
                         </button>
                     </Link>

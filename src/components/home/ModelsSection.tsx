@@ -89,9 +89,9 @@ export default function ModelsSection() {
                             <div
                                 key={model.id}
                                 onClick={() => setActiveModel(idx)}
-                                className={`group p-8 border cursor-pointer transition-all duration-500 relative overflow-hidden bg-aldurr-void ${activeModel === idx
-                                    ? "border-aldurr-honey/50 shadow-[0_0_30px_rgba(198,156,109,0.1)]"
-                                    : "border-white/10 hover:border-white/30"
+                                className={`group p-8 border cursor-pointer transition-all duration-500 relative overflow-hidden backdrop-blur-3xl transition-all duration-500 ${activeModel === idx
+                                    ? "bg-aldurr-canvas/40 border-aldurr-honey/50 shadow-[0_0_30px_rgba(198,156,109,0.1)]"
+                                    : "bg-white/[0.02] border-white/10 hover:border-white/30 hover:bg-white/[0.05]"
                                     }`}
                             >
                                 <div className="flex justify-between items-start mb-2">

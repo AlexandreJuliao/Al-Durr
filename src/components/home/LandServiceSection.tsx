@@ -9,7 +9,7 @@ export default function LandServiceSection() {
                 <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-aldurr-honey/5 rounded-full blur-[120px] -mr-48 -mb-48 pointer-events-none" />
             </div>
             <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center relative z-10">
-                <div className="relative h-[400px] w-full bg-aldurr-honey/5 border border-white/5 overflow-hidden">
+                <div className="relative h-[400px] w-full bg-aldurr-canvas/20 backdrop-blur-2xl border border-white/10 overflow-hidden shadow-2xl">
                     {/* Abstract Map visual or Land visual */}
                     <div className="absolute inset-0 opacity-10 bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')] bg-cover bg-center grayscale mix-blend-overlay" />
                     <div className="absolute inset-0 flex items-center justify-center">

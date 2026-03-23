@@ -44,7 +44,7 @@ export default function FAQSection() {
 
                 <div className="space-y-4">
                     {faqs.map((faq, i) => (
-                        <div key={i} className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transition-colors hover:border-white/20 hover:bg-white/10">
+                        <div key={i} className="border border-white/5 bg-white/[0.04] backdrop-blur-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:border-white/10 hover:bg-white/[0.08] shadow-lg shadow-black/20">
                             <button
                                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                                 className="w-full flex justify-between items-center px-8 py-6 text-left group"

@@ -17,14 +17,14 @@ export default function PrismSection() {
     const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
 
     return (
-        <section ref={containerRef} className="relative h-[150vh] bg-aldurr-void border-t border-white/5">
+        <section ref={containerRef} className="relative min-h-screen py-24 md:py-32 bg-aldurr-void border-t border-white/5 overflow-hidden">
             <div className="absolute inset-0 bg-aldurr-honey/5 pointer-events-none" />
             {/* Ambient Background Glow */}
             <div className="absolute top-1/4 left-0 w-1/2 h-1/2 bg-aldurr-accent/5 blur-[120px] rounded-full pointer-events-none" />
 
-            <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 md:gap-12 items-center relative z-10">
                 {/* Text Content */}
-                <div className="order-2 md:order-1 space-y-10 pl-4 md:pl-12">
+                <div className="order-1 md:order-1 space-y-10 pl-4 md:pl-12">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -42,7 +42,7 @@ export default function PrismSection() {
                             {t.prism.description}
                         </p>
                     </motion.div>
-
+ 
                     <div className="space-y-8 pt-8 border-l border-white/5 pl-8">
                         {[t.prism.feature1, t.prism.feature2, t.prism.feature3].map((feature, index) => (
                             <motion.div
@@ -60,11 +60,11 @@ export default function PrismSection() {
                         ))}
                     </div>
                 </div>
-
+ 
                 {/* Visual Content */}
                 <motion.div
                     style={{ y, scale, opacity }}
-                    className="order-1 md:order-2 relative h-[500px] md:h-[800px] w-full flex items-center justify-center"
+                    className="order-2 md:order-2 relative h-[500px] md:h-[800px] w-full flex items-center justify-center"
                 >
                     <div className="relative w-full h-full">
                         {/* Main Image — new A-frame house with structural frame */}
