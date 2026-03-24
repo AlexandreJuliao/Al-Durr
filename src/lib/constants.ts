@@ -19,7 +19,7 @@ export const translations = {
             stageC: "Final",
             slides: [
                 { title: "Geometria Pura", subtitle: "O Traço Icónico" },
-                { title: "Eficiência", subtitle: "Do Projeto à Realidade em 4 Meses" },
+                { title: "Eficiência", subtitle: "Do Projeto à Realidade em 6 Meses" },
                 { title: "Perenidade", subtitle: "Materiais que Desafiam o Tempo" },
                 { title: "Adaptabilidade", subtitle: "Espaços que Crescem Consigo" },
                 { title: "Distinção", subtitle: "Um Investimento de Valor Absoluto" }
@@ -112,7 +112,7 @@ export const translations = {
             stageC: "Final",
             slides: [
                 { title: "Pure Geometry", subtitle: "The Iconic Stroke" },
-                { title: "Efficiency", subtitle: "From Blueprint to Reality in 4 Months" },
+                { title: "Efficiency", subtitle: "From Blueprint to Reality in 6 Months" },
                 { title: "Permanence", subtitle: "Materials That Defy Time" },
                 { title: "Adaptability", subtitle: "Spaces That Grow With You" },
                 { title: "Distinction", subtitle: "An Investment of Absolute Value" }

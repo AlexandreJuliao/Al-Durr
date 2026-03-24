@@ -52,7 +52,7 @@ export default function HeroAnimation() {
                                     <div className="flex-1 group flex flex-col cursor-default">
                                         <div className="flex items-baseline gap-1.5 lg:gap-2 mb-0.5 lg:mb-2">
                                             <span className="text-6xl md:text-5xl lg:text-7xl font-bold bg-gold-metallic bg-clip-text text-transparent drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)] tracking-tighter leading-none">
-                                                4
+                                                6
                                             </span>
                                             <span className="text-sm md:text-sm lg:text-xl text-white/50 font-light tracking-tight">Meses</span>
                                         </div>
@@ -94,13 +94,13 @@ export default function HeroAnimation() {
 
                                 <div className="relative mt-4 group w-full">
                                     <div className="absolute -inset-1 bg-gradient-to-r from-aldurr-honey to-aldurr-honey-light rounded-sm blur opacity-10 group-hover:opacity-30 transition duration-700" />
-                                    <button className="relative flex items-center justify-between gap-4 md:gap-6 pl-6 md:pl-8 pr-2 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-sm hover:bg-white/10 transition-all duration-300 group w-full">
+                                    <button className="relative flex items-center justify-between pl-6 md:pl-8 pr-2 py-2 md:py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-sm hover:bg-white/10 transition-all duration-300 group w-full overflow-hidden">
                                         <span className="flex flex-col items-start mr-2 md:mr-4 text-left">
                                             <span className="text-[10px] md:text-[9px] text-white/50 uppercase tracking-[0.2em] mb-0.5 font-bold">Inicie o seu Legado</span>
                                             <span className="text-xs md:text-sm text-white font-medium tracking-widest whitespace-nowrap uppercase">Solicitar Estudo Exclusivo</span>
                                         </span>
-                                        <span className="flex-shrink-0 w-12 h-12 md:w-12 bg-gold-metallic text-aldurr-void rounded-none flex items-center justify-center transform group-hover:scale-[1.02] group-hover:rotate-45 transition-all duration-500 shadow-xl">
-                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <span className="flex-shrink-0 w-10 h-10 md:w-11 md:h-11 bg-gold-metallic text-aldurr-void rounded-[2px] flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-xl self-center">
+                                            <svg className="w-3 h-3 md:w-3.5 md:h-3.5" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M1 13L13 1M13 1H5M13 1V9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
                                         </span>

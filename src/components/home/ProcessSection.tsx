@@ -70,9 +70,9 @@ export default function ProcessSection() {
         // Using hRatio * 1.35 fills the width much better while allowing us to see the whole animation bounds.
         const ratio = isMobile ? (hRatio * 1.35) : Math.max(hRatio, vRatio);
 
-        // On desktop, shift right to avoid text. On mobile, shift slightly up to leave room for text.
+        // On desktop, shift right to avoid text. On mobile, move image lower down.
         const centerShift_x = (canvas.width - img.width * ratio) / 2 + (isMobile ? 0 : canvas.width * 0.1); 
-        const centerShift_y = (canvas.height - img.height * ratio) / 2 - (isMobile ? canvas.height * 0.15 : 0);
+        const centerShift_y = (canvas.height - img.height * ratio) / 2 + (isMobile ? canvas.height * 0.08 : 0);
 
         ctx.drawImage(
             img,
@@ -148,7 +148,7 @@ export default function ProcessSection() {
 
                 {/* Responsive Gradients */}
                 <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-aldurr-void/90 md:from-aldurr-void/80 via-aldurr-void/40 md:via-transparent to-transparent opacity-90 z-10" />
-                <div className="absolute inset-x-0 bottom-0 h-[50vh] bg-gradient-to-t from-aldurr-void via-aldurr-void/60 to-transparent z-10 opacity-100 lg:hidden" />
+                <div className="absolute inset-x-0 bottom-0 h-[65vh] bg-gradient-to-t from-aldurr-void via-aldurr-void/80 to-transparent z-10 opacity-100 lg:hidden" />
                 <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-aldurr-void to-transparent z-10 opacity-70 hidden lg:block" />
 
                 <div className="container mx-auto px-6 relative z-20 h-full flex flex-col justify-center">
@@ -208,7 +208,7 @@ function StepItem({ step, progress }: { step: Step, progress: MotionValue<number
     return (
         <motion.div
             style={{ opacity, x, filter }}
-            className="absolute bottom-10 md:top-0 left-0 w-full pointer-events-none"
+            className="absolute bottom-48 md:bottom-auto md:top-0 left-0 w-full pointer-events-none"
         >
             <div className="flex flex-col gap-4 md:gap-6 px-6 md:px-0 max-w-xl">
                 <div className="flex items-center gap-4">

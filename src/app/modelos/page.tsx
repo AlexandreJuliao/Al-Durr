@@ -157,7 +157,7 @@ export default function ModelosPage() {
                                 </div>
 
                                 {/* Visual */}
-                                <div className="flex-1 w-full relative h-[500px] border border-white/5 rounded-sm overflow-hidden group bg-aldurr-stone">
+                                <div className="w-full lg:flex-1 shrink-0 relative h-[350px] md:h-[400px] lg:h-[500px] border border-white/5 rounded-sm overflow-hidden group bg-aldurr-stone">
                                     <Image
                                         src={model.image}
                                         alt={model.title}
@@ -251,17 +251,17 @@ export default function ModelosPage() {
                 <div className="container mx-auto px-4">
                     <div className="grid lg:grid-cols-2 gap-20 items-center">
                         <div className="relative group">
-                            <div className="relative h-[650px] w-full p-[1px] bg-gradient-to-b from-white/10 to-transparent rounded-sm">
-                                <div className="relative w-full h-full bg-white/[0.02] border border-dashed border-white/20 rounded-sm overflow-hidden flex items-center justify-center">
-                                    <div className="text-center">
-                                        <div className="w-12 h-12 border-2 border-dashed border-aldurr-honey/30 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 group-hover:border-aldurr-honey transition-all duration-500">
-                                            <span className="text-aldurr-honey">+</span>
-                                        </div>
-                                        <p className="text-[10px] uppercase tracking-[0.3em] text-white/30 group-hover:text-aldurr-honey/50 transition-colors">Imagem de Acabamentos</p>
-                                    </div>
-                                </div>
+                            <div className="relative h-[650px] w-full rounded-sm overflow-hidden border border-white/10 shadow-2xl">
+                                <Image
+                                    src="/interior-mezzanine-new.png"
+                                    alt="Interior Al Durr - O Seu Legado Inimitável"
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                />
+                                {/* Cinematic Vignette */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-aldurr-void/80 via-transparent to-transparent" />
                             </div>
-                            {/* Material Dots HUD overlay potentially? */}
                         </div>
                         
                         <div className="space-y-12">

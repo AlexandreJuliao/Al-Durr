@@ -111,6 +111,31 @@ export default function ModelsSection() {
                                     animate={{ height: activeModel === idx ? "auto" : 0, opacity: activeModel === idx ? 1 : 0 }}
                                     className="overflow-hidden"
                                 >
+                                    {/* Mobile Image */}
+                                    <div className="block lg:hidden relative w-full h-[250px] md:h-[400px] my-6 rounded-sm overflow-hidden border border-white/10">
+                                        <Image
+                                            src={model.image}
+                                            alt={model.title}
+                                            fill
+                                            className="object-cover"
+                                            sizes="(max-width: 1024px) 100vw, 0vw"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-aldurr-void to-transparent opacity-80" />
+                                        
+                                        {/* Status Tag */}
+                                        <div className="absolute top-4 right-4 px-3 py-1.5 bg-black/40 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2">
+                                            <div className="w-1.5 h-1.5 bg-aldurr-honey animate-pulse" />
+                                            <span className="text-[8px] font-mono text-aldurr-text-body tracking-[0.2em] uppercase">V-Ray Render</span>
+                                        </div>
+
+                                        <div className="absolute bottom-4 left-4">
+                                            <span className="text-[10px] text-aldurr-honey font-bold tracking-[0.5em] uppercase">Dimensão</span>
+                                            <p className="text-3xl font-bold tracking-tighter text-aldurr-text-body mt-1">
+                                                {model.area}
+                                            </p>
+                                        </div>
+                                    </div>
+
                                     <p className="text-sm text-aldurr-text-body/60 font-light leading-relaxed mb-6">
                                         {model.desc}
                                     </p>
@@ -137,7 +162,7 @@ export default function ModelsSection() {
                     </div>
 
                     {/* Image Display */}
-                    <div className="lg:w-2/3 relative min-h-[600px] border border-white/10 rounded-sm overflow-hidden bg-[#111111] shadow-2xl group/display">
+                    <div className="hidden lg:block lg:w-2/3 relative min-h-[600px] border border-white/10 rounded-sm overflow-hidden bg-[#111111] shadow-2xl group/display">
                         <motion.div
                             key={activeModel}
                             initial={{ opacity: 0, scale: 1.05 }}
