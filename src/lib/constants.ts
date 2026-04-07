@@ -12,7 +12,7 @@ export const translations = {
             badge: "AL DURR ARCHITECTURE",
             headline: "Design. Rapidez. Eternidade.",
             sub: "A sua casa pronta a habitar em 6 meses. Sem manutenção.",
-            description: "A simbiose perfeita entre a alta engenharia naval e a arquitetura contemporânea de luxo. Habitações modulares que desafiam o tempo.",
+            description: "A simbiose perfeita entre a alta engenharia naval e a arquitetura contemporânea de luxo. Habitações de engenharia inteligente que desafiam o tempo.",
             cta_secondary: "SABER MAIS",
             stageA: "Estrutura",
             stageB: "Acabamento",
@@ -31,11 +31,11 @@ export const translations = {
             description: "Não é uma cabana rústica. É uma peça de arquitetura contemporânea definida pela sua geometria trapezoidal e moldura identitária.",
             feature1: "Design Trapezoidal",
             feature2: "A Moldura Identitária",
-            feature3: "Extrusão Modular"
+            feature3: "Extrusão de Alta Precisão"
         },
         models: {
             subtitle: "CONCESSÃO DE LUXO",
-            description: "Explore a nossa linha de modelos modulares, desenhados para máxima eficiência espacial e estética inconfundível."
+            description: "Explore a nossa linha de modelos de engenharia avançada, desenhados para máxima eficiência espacial e estética inconfundível."
         },
         engineering: {
             title: "Engenharia de Elite",
@@ -53,7 +53,7 @@ export const translations = {
             step2Title: "Fabrico Industrial",
             step2Desc: "Construção em ambiente controlado com precisão milimétrica e materiais premium.",
             step3Title: "Logística & Montagem",
-            step3Desc: "Transporte do módulo e montagem no local em tempo recorde (apenas alguns dias).",
+            step3Desc: "Transporte do sistema estrutural e montagem no local em tempo recorde (apenas alguns dias).",
             step4Title: "Entrega Chave-na-Mão",
             step4Desc: "Finalização de acabamentos e entrega da sua nova casa pronta a habitar."
         },
@@ -105,7 +105,7 @@ export const translations = {
             badge: "AL DURR ARCHITECTURE",
             headline: "Design. Speed. Eternity.",
             sub: "Your home ready to live in 6 months. Maintenance-free.",
-            description: "The perfect symbiosis between high naval engineering and contemporary luxury architecture. Modular homes that defy time.",
+            description: "The perfect symbiosis between high naval engineering and contemporary luxury architecture. Intelligent engineering homes that defy time.",
             cta_secondary: "LEARN MORE",
             stageA: "Structure",
             stageB: "Finishing",
@@ -124,11 +124,11 @@ export const translations = {
             description: "Not a rustic cabin. A piece of contemporary architecture defined by its trapezoidal geometry and signature frame.",
             feature1: "Trapezoidal Design",
             feature2: "Signature Frame",
-            feature3: "Modular Extrusion"
+            feature3: "High-Precision Extrusion"
         },
         models: {
             subtitle: "LUXURY DEALERSHIP",
-            description: "Explore our line of modular models, designed for maximum spatial efficiency and unmistakable aesthetics."
+            description: "Explore our line of advanced engineering models, designed for maximum spatial efficiency and unmistakable aesthetics."
         },
         engineering: {
             title: "Elite Engineering",
@@ -146,7 +146,7 @@ export const translations = {
             step2Title: "Industrial Manufacture",
             step2Desc: "Construction in a controlled environment with millimetric precision and premium materials.",
             step3Title: "Logistics & Assembly",
-            step3Desc: "Module transport and on-site assembly in record time (just a few days).",
+            step3Desc: "Structural system transport and on-site assembly in record time (just a few days).",
             step4Title: "Turnkey Delivery",
             step4Desc: "Finishing touches and delivery of your new home ready to live in."
         },

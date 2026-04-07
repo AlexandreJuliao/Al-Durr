@@ -16,7 +16,7 @@ const teamMembers = [
     {
         name: "Inês Santos",
         role: "Head of Engineering",
-        bio: "A força que mantém tudo de pé. Especialista em estruturas modulares e sismo-resistentes, garantindo segurança sem comprometer a arte.",
+        bio: "A força que mantém tudo de pé. Especialista em sistemas estruturais avançados e sismo-resistentes, garantindo segurança sem comprometer a arte.",
         image: "/team-engineer.png"
     },
     {

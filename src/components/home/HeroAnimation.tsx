@@ -83,7 +83,7 @@ export default function HeroAnimation() {
                                     {[
                                         { text: "Bio-Estrutura • Carbono Negativo" },
                                         { text: "Performance A++ • Isolamento" },
-                                        { text: "Arquitetura Modular Sustentável" }
+                                        { text: "Engenharia Inteligente Sustentável" }
                                     ].map((item, i) => (
                                         <div key={i} className="group flex items-center gap-3 md:gap-5 text-white/80 font-light hover:text-white transition-all duration-300 cursor-default">
                                             <div className="w-1.5 h-1.5 rounded-none bg-aldurr-honey/60 group-hover:bg-aldurr-honey group-hover:scale-[1.5] transition-all duration-500 flex-shrink-0" />

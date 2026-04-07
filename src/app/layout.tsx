@@ -27,8 +27,8 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Al Durr | A-Frame Modular Houses",
-  description: "Design. Rapidez. Eternidade. A sua casa pronta a habitar em 6 meses.",
+  title: "Al Durr | A-Frame Intelligent Engineering",
+  description: "Design. Rapidez. Eternidade. A sua habitação de engenharia avançada pronta em 6 meses.",
 };
 
 export default function RootLayout({

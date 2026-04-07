@@ -1,0 +1,26 @@
+FROM node:20
+
+WORKDIR /app
+
+# Configurar resiliência de rede via ENV (Método mais seguro para Docker)
+ENV NPM_CONFIG_FETCH_RETRY_MINTIMEOUT=20000
+ENV NPM_CONFIG_FETCH_RETRY_MAXTIMEOUT=120000
+ENV NPM_CONFIG_FETCH_RETRIES=10
+ENV NPM_CONFIG_TIMEOUT=600000
+
+# Instalamos as dependências primeiro para cache do Docker
+COPY package.json package-lock.json* ./
+
+# Instalação Verbosa: Vamos ver exatamente o que o NPM está a descarregar 
+# para garantir que o processo está a andar e não "congelado".
+RUN npm install --loglevel verbose --network-timeout=600000
+
+# Copiar os restantes ficheiros
+COPY . .
+
+ENV NEXT_TELEMETRY_DISABLED 1
+ENV WATCHPACK_POLLING true
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]

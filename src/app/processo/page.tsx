@@ -86,7 +86,7 @@ export default function ProcessoPage() {
                 </div>
             </section>
 
-            {/* Modular vs Traditional Comparison */}
+            {/* Intelligent Engineering vs Traditional Comparison */}
             <section className="py-32 bg-aldurr-stone/30 relative z-10 border-y border-white/5">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-20">
@@ -116,7 +116,7 @@ export default function ProcessoPage() {
                             </div>
                         </div>
 
-                        {/* Al Durr Modular */}
+                        {/* Al Durr Precision */}
                         <div className="bg-aldurr-void p-12 space-y-8 relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-aldurr-honey/10 blur-[100px] -mr-32 -mt-32" />
                             <h4 className="text-xl font-bold text-aldurr-honey flex items-center gap-3">

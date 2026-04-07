@@ -30,7 +30,7 @@ const modelsFull = [
     {
         id: "t2-family",
         title: "T2 FAMILY",
-        subtitle: "Expansão Modular",
+        subtitle: "Expansão de Alta Precisão",
         price: "199.900",
         area: "65m²",
         desc: "Com 35m² no piso inferior e um espaçoso mezzanine de 30m², ideal para pequenas famílias (incluindo berçário) ou refúgios com máximo conforto e integração fluida com a natureza.",

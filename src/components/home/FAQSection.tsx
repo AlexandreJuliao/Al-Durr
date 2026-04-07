@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
     {
         q: "É necessário licenciamento?",
-        a: "Sim. Apesar de ser construção modular, é uma habitação permanente e requer licenciamento camarário. A nossa equipa de arquitetura trata de todo o processo burocrático por si."
+        a: "Sim. Apesar de se tratar de uma arquitetura de alta precisão baseada em engenharia avançada, é uma habitação permanente e requer licenciamento camarário. A nossa equipa de arquitetura trata de todo o processo burocrático por si."
     },
     {
         q: "O preço inclui transporte e montagem?",

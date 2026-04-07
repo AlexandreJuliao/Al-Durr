@@ -1,0 +1,27 @@
+# Node.js dependencies (catch any variation)
+node_modules*
+node_modules/
+node_modules
+
+# Next.js build output
+.next/
+out/
+build/
+dist/
+
+# System and logs
+.DS_Store
+.git/
+.gitignore
+.dockerignore
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env*
+.env.local
+
+# Docker files
+Dockerfile*
+docker-compose*

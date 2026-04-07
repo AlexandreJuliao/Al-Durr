@@ -31,7 +31,7 @@ const models = [
         subtitle: "Sem Limites",
         price: "Sob Consulta",
         area: "75m²+",
-        desc: "A modularidade permite expandir o comprimento da casa infinitamente. Crie a sua mansão A-Frame.",
+        desc: "O nosso sistema de expansão de precisão permite customizar o comprimento da habitação de forma contínua. Crie a sua mansão A-Frame.",
         features: ["Layout Personalizado", "Múltiplas Suites", "Sauna / Ginásio", "Acabamentos Elite"],
         image: "/t-multi-model.jpg"
     }

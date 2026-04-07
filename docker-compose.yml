@@ -1,0 +1,20 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: al_durr_dev
+    ports:
+      - "3060:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - WATCHPACK_POLLING=true
+    # env_file:
+    #   - .env.local # Uncomment this if you create a .env.local file
+    # If .env.local doesn't exist, docker-compose might complain. 
+    # Use standard environment variables or a check if needed.

@@ -7,7 +7,7 @@ const team = [
     {
         name: "Arquiteto Principal",
         role: "Founder & Design Lead",
-        bio: "Visionário por trás do traço A-Frame contemporâneo. 15 anos de experiência em arquitetura modular."
+        bio: "Visionário por trás do traço A-Frame contemporâneo. 15 anos de experiência em engenharia de precisão e design de elite."
     },
     {
         name: "Engenharia Civil",
