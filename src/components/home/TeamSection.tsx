@@ -5,19 +5,19 @@ import { motion } from "framer-motion";
 
 const team = [
     {
-        name: "Arquiteto Principal",
+        name: "Pedro Antunes",
         role: "Founder & Design Lead",
-        bio: "Visionário por trás do traço A-Frame contemporâneo. 15 anos de experiência em engenharia de precisão e design de elite."
+        bio: "Visionário por trás do traço A-Frame contemporâneo. Focado em engenharia de precisão e design de elite para criar legados duradouros."
     },
     {
-        name: "Engenharia Civil",
-        role: "Structural Head",
-        bio: "Especialista em estruturas leves e sismo-resistentes. Garante que a estética sobrevive ao tempo."
+        name: "Érica Antunes",
+        role: "Structural & Design",
+        bio: "Especialista em garantir que a estética e a funcionalidade caminham juntas, assegurando estruturas que resistem ao tempo com elegância."
     },
     {
-        name: "Gestão de Obra",
-        role: "Operations Director",
-        bio: "O relógio suíço da equipa. Assegura que os 4 meses são cumpridos à risca."
+        name: "Tatiana Antunes",
+        role: "Operations & Management",
+        bio: "Responsável pela coordenação e fluidez de todos os processos, garantindo que cada projeto Al Durr seja entregue com rigor e excelência."
     }
 ];
 

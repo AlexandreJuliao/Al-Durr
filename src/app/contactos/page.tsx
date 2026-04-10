@@ -8,21 +8,21 @@ import { motion } from "framer-motion";
 
 const teamMembers = [
     {
-        name: "Duarte Silva",
-        role: "Lead Architect",
-        bio: "O visionário por trás da estética Al Durr. Com 15 anos de experiência em design sustentável, Duarte funde a natureza com o betão.",
+        name: "Pedro Antunes",
+        role: "Founder & Design Lead",
+        bio: "O visionário por trás da estética Al Durr. Com vasta experiência em design de elite, Pedro funde a engenharia de precisão com a visão arquitetónica contemporânea.",
         image: "/team-architect.png"
     },
     {
-        name: "Inês Santos",
-        role: "Head of Engineering",
-        bio: "A força que mantém tudo de pé. Especialista em sistemas estruturais avançados e sismo-resistentes, garantindo segurança sem comprometer a arte.",
+        name: "Érica Antunes",
+        role: "Structural & Design",
+        bio: "A força que assegura a integridade de cada projeto. Especialista em sistemas avançados, garante segurança e excelência estética em cada traço.",
         image: "/team-engineer.png"
     },
     {
-        name: "Pedro Costa",
+        name: "Tatiana Antunes",
         role: "Operations Director",
-        bio: "O maestro da logística. Garante que do primeiro traço à chave na mão, o processo é fluido e o prazo é sagrado.",
+        bio: "A maestrina da logística e gestão. Garante que do primeiro contacto à entrega da chave, o processo Al Durr é fluido, rigoroso e de alta performance.",
         image: "/team-ops.png"
     }
 ];
@@ -122,15 +122,15 @@ export default function ContactosPage() {
                         <div className="space-y-8">
                             <div className="border-l-2 border-aldurr-honey/50 pl-6">
                                 <p className="text-xs text-aldurr-honey uppercase tracking-widest mb-1">Email</p>
-                                <a href="mailto:info@aldurr.pt" className="text-2xl text-aldurr-text-heading hover:text-aldurr-honey transition-colors">info@aldurr.pt</a>
+                                <a href="mailto:al.durr@outlook.com" className="text-2xl text-aldurr-text-heading hover:text-aldurr-honey transition-colors">al.durr@outlook.com</a>
                             </div>
                             <div className="border-l-2 border-aldurr-honey/50 pl-6">
                                 <p className="text-xs text-aldurr-honey uppercase tracking-widest mb-1">Telefone</p>
-                                <a href="tel:+351912345678" className="text-2xl text-aldurr-text-heading hover:text-aldurr-honey transition-colors">+351 912 345 678</a>
+                                <a href="tel:+351935994555" className="text-2xl text-aldurr-text-heading hover:text-aldurr-honey transition-colors">+351 935 994 555</a>
                             </div>
                             <div className="border-l-2 border-aldurr-honey/50 pl-6">
-                                <p className="text-xs text-aldurr-honey uppercase tracking-widest mb-1">Studio</p>
-                                <p className="text-xl text-aldurr-text-heading">Av. da Liberdade, 100<br />Lisboa, Portugal</p>
+                                <p className="text-xs text-aldurr-honey uppercase tracking-widest mb-1">Sede</p>
+                                <p className="text-xl text-aldurr-text-heading">R. Nossa Sra. da Graça<br />Póvoa de Penafirme 119<br />2560-046 Torres Vedras</p>
                             </div>
                         </div>
                     </div>
