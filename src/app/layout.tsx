@@ -1,3 +1,4 @@
+// Trigger build: 2026-04-10
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Outfit, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
