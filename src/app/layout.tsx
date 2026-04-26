@@ -1,6 +1,7 @@
 // Trigger build: 2026-04-10
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Outfit, Cormorant_Garamond } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import SmoothScrolling from "@/components/SmoothScrolling";
@@ -43,6 +44,19 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${cormorant.variable} antialiased bg-aldurr-void text-aldurr-text-heading selection:bg-aldurr-accent selection:text-aldurr-canvas`}
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-8BPXJDE5GW"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-8BPXJDE5GW');
+          `}
+        </Script>
         <LanguageProvider>
           <SmoothScrolling>
             {children}
