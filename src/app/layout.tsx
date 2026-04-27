@@ -57,6 +57,15 @@ export default function RootLayout({
             gtag('config', 'G-8BPXJDE5GW');
           `}
         </Script>
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "whsf4l0yd3");
+          `}
+        </Script>
         <LanguageProvider>
           <SmoothScrolling>
             {children}
