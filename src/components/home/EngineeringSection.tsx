@@ -92,7 +92,7 @@ export default function EngineeringSection() {
                                 className="relative w-full h-full"
                             >
                                 <Image
-                                    src="/images/trapezoidal-engineering-blueprint.png"
+                                    src="/images/trapezoidal-engineering-blueprint.avif"
                                     alt="Al Durr Engineering Skeleton"
                                     fill
                                     className="object-contain object-center drop-shadow-[0_0_120px_rgba(198,156,109,0.15)] grayscale transition-all duration-1000"

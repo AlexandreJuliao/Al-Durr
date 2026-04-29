@@ -11,19 +11,19 @@ const teamMembers = [
         name: "Pedro Antunes",
         role: "Founder & Design Lead",
         bio: "O visionário por trás da estética Al Durr. Com vasta experiência em design de elite, Pedro funde a engenharia de precisão com a visão arquitetónica contemporânea.",
-        image: "/team-architect.png"
+        image: "/team-architect.avif"
     },
     {
         name: "Érica Antunes",
         role: "Structural & Design",
         bio: "A força que assegura a integridade de cada projeto. Especialista em sistemas avançados, garante segurança e excelência estética em cada traço.",
-        image: "/team-engineer.png"
+        image: "/team-engineer.avif"
     },
     {
         name: "Tatiana Antunes",
         role: "Operations Director",
         bio: "A maestrina da logística e gestão. Garante que do primeiro contacto à entrega da chave, o processo Al Durr é fluido, rigoroso e de alta performance.",
-        image: "/team-ops.png"
+        image: "/team-ops.avif"
     }
 ];
 
@@ -79,23 +79,14 @@ export default function ContactosPage() {
                             transition={{ delay: i * 0.2, duration: 0.8 }}
                             className="group relative"
                         >
-                            <div className="relative h-[500px] w-full p-[1px] bg-gradient-to-b from-white/10 to-transparent rounded-sm group-hover:-translate-y-2 transition-transform duration-500 ease-out">
-                                <div className="relative w-full h-full bg-aldurr-stone rounded-sm overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-                                    <Image
-                                        src={member.image}
-                                        alt={member.name}
-                                        fill
-                                        className="object-cover object-center"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                                    <div className="absolute bottom-0 left-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 z-10">
-                                        <p className="text-aldurr-honey text-xs font-bold tracking-[0.2em] uppercase mb-2">{member.role}</p>
-                                        <h3 className="text-3xl font-bold mb-4 text-white">{member.name}</h3>
-                                        <p className="text-white/60 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                            {member.bio}
-                                        </p>
-                                    </div>
+                            <div className="relative p-8 bg-white/[0.02] border border-white/5 rounded-sm group-hover:-translate-y-2 transition-transform duration-500 ease-out h-full min-h-[300px] flex flex-col justify-end">
+                                <div className="absolute inset-0 bg-aldurr-honey/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="relative z-10">
+                                    <p className="text-aldurr-honey text-xs font-bold tracking-[0.2em] uppercase mb-2">{member.role}</p>
+                                    <h3 className="text-3xl font-bold mb-4 text-white">{member.name}</h3>
+                                    <p className="text-white/60 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        {member.bio}
+                                    </p>
                                 </div>
                             </div>
                         </motion.div>

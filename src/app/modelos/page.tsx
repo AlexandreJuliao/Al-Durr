@@ -25,7 +25,7 @@ const modelsFull = [
             "Deck frontal em madeira maciça (15m²)",
             "Fachada envidraçada termo-acústica"
         ],
-        image: "/t1-model.jpg"
+        image: "/t1-model.avif"
     },
     {
         id: "t2-family",
@@ -34,7 +34,7 @@ const modelsFull = [
         price: "199.900",
         area: "65m²",
         desc: "Com 35m² no piso inferior e um espaçoso mezzanine de 30m², ideal para pequenas famílias (incluindo berçário) ou refúgios com máximo conforto e integração fluida com a natureza.",
-        image: "/t2-model-new.png",
+        image: "/t2-model-new.avif",
         specs: [
             { label: "Área Bruta", value: "65 m²" },
             { label: "Pé Direito", value: "6.0 m" },
@@ -69,7 +69,7 @@ const modelsFull = [
             "Acabamentos em mármore e madeiras exóticas",
             "Soluções Off-Grid disponíveis"
         ],
-        image: "/t-multi-model.jpg"
+        image: "/t-multi-model.avif"
     }
 ];
 
@@ -253,7 +253,7 @@ export default function ModelosPage() {
                         <div className="relative group">
                             <div className="relative h-[650px] w-full rounded-sm overflow-hidden border border-white/10 shadow-2xl">
                                 <Image
-                                    src="/interior-mezzanine-new.png"
+                                    src="/interior-mezzanine-new.avif"
                                     alt="Interior Al Durr - O Seu Legado Inimitável"
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"

@@ -48,14 +48,7 @@ export default function TeamSection() {
                             transition={{ delay: i * 0.15, duration: 0.8 }}
                             className="bg-white/[0.02] backdrop-blur-xl p-10 border border-white/10 rounded-sm hover:bg-white-[0.05] hover:border-aldurr-honey/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] transition-all duration-500 group"
                         >
-                            <div className="w-20 h-20 relative mb-8 group-hover:shadow-[0_0_20px_rgba(198,156,109,0.5)] transition-all duration-500 rounded-sm overflow-hidden border border-white/10">
-                                <Image
-                                    src={i === 0 ? "/team-architect.png" : i === 1 ? "/team-engineer.png" : "/team-ops.png"}
-                                    alt={member.name}
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
+                            {/* Photo removed as requested */}
                             <h3 className="text-2xl font-bold text-aldurr-text-body mb-2 group-hover:text-aldurr-honey transition-colors">{member.name}</h3>
                             <p className="text-[10px] text-aldurr-honey font-bold uppercase tracking-[0.2em] mb-6 inline-block bg-aldurr-honey/10 px-3 py-1 rounded-sm">{member.role}</p>
                             <p className="text-base text-aldurr-text-body/60 font-light leading-relaxed">

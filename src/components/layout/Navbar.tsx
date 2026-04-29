@@ -48,7 +48,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="z-10 cursor-pointer hover:opacity-80 transition-opacity relative h-12 md:h-16 lg:h-20 w-40 md:w-52 lg:w-64">
                 <Image
-                    src="/logos/logo-white-horizontal.png"
+                    src="/logos/logo-white-horizontal.avif"
                     alt="Al Durr Logo"
                     fill
                     className="object-contain"

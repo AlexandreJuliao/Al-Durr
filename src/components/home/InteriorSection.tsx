@@ -36,7 +36,7 @@ export default function InteriorSection() {
                             transition={{ duration: 1.5, ease: "easeOut" }}
                         >
                             <Image
-                                src="/interior-mezzanine-new.png"
+                                src="/interior-mezzanine-new.avif"
                                 alt="Al Durr Interior"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 60vw"

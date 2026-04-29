@@ -69,7 +69,7 @@ export default function PrismSection() {
                     <div className="relative w-full h-full">
                         {/* Main Image — new A-frame house with structural frame */}
                         <Image
-                            src="/prism-house-new.png"
+                            src="/prism-house-new.avif"
                             alt="Al Durr A-Frame Model with Structural Frame"
                             fill
                             sizes="(max-width: 768px) 100vw, 50vw"

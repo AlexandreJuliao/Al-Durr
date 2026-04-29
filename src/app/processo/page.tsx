@@ -55,28 +55,28 @@ export default function ProcessoPage() {
                         <div className="relative grid md:grid-cols-2 gap-4">
                             {/* Phase 1 */}
                             <div className="relative h-[250px] bg-white/[0.02] border border-white/5 p-8 flex flex-col justify-between overflow-hidden group">
-                                <div className="absolute inset-0 bg-[url('/phase1-factory.png')] bg-cover bg-center opacity-30 group-hover:opacity-60 transition-opacity duration-500 mix-blend-luminosity hover:mix-blend-normal" />
+                                <div className="absolute inset-0 bg-[url('/phase1-factory.avif')] bg-cover bg-center opacity-30 group-hover:opacity-60 transition-opacity duration-500 mix-blend-luminosity hover:mix-blend-normal" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
                                 <span className="relative z-10 text-xs text-aldurr-honey font-bold tracking-widest uppercase italic">Fase 1</span>
                                 <h5 className="relative z-10 text-sm font-bold text-white uppercase tracking-widest drop-shadow-md">Corte Robótico <br />de Precisão</h5>
                             </div>
                             {/* Phase 2 */}
                             <div className="relative h-[250px] bg-white/[0.02] border border-white/5 p-8 flex flex-col justify-between md:translate-y-8 overflow-hidden group">
-                                <div className="absolute inset-0 bg-[url('/phase2-assembly.png')] bg-cover bg-center opacity-30 group-hover:opacity-60 transition-opacity duration-500 mix-blend-luminosity hover:mix-blend-normal" />
+                                <div className="absolute inset-0 bg-[url('/phase2-assembly.avif')] bg-cover bg-center opacity-30 group-hover:opacity-60 transition-opacity duration-500 mix-blend-luminosity hover:mix-blend-normal" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
                                 <span className="relative z-10 text-xs text-aldurr-honey font-bold tracking-widest uppercase italic">Fase 2</span>
                                 <h5 className="relative z-10 text-sm font-bold text-white uppercase tracking-widest drop-shadow-md">Montagem de <br />Células 3D</h5>
                             </div>
                             {/* Phase 3 */}
                             <div className="relative h-[250px] bg-white/[0.02] border border-white/5 p-8 flex flex-col justify-between overflow-hidden group">
-                                <div className="absolute inset-0 bg-[url('/phase3-interior.png')] bg-cover bg-[center_top] opacity-30 group-hover:opacity-60 transition-opacity duration-500 mix-blend-luminosity hover:mix-blend-normal" />
+                                <div className="absolute inset-0 bg-[url('/phase3-interior.avif')] bg-cover bg-[center_top] opacity-30 group-hover:opacity-60 transition-opacity duration-500 mix-blend-luminosity hover:mix-blend-normal" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
                                 <span className="relative z-10 text-xs text-aldurr-honey font-bold tracking-widest uppercase italic">Fase 3</span>
                                 <h5 className="relative z-10 text-sm font-bold text-white uppercase tracking-widest drop-shadow-md">Acabamentos <br />Interiores</h5>
                             </div>
                             {/* Phase 4 */}
                             <div className="relative h-[250px] bg-white/[0.02] border border-white/5 p-8 flex flex-col justify-between md:translate-y-8 overflow-hidden group">
-                                <div className="absolute inset-0 bg-[url('/phase4-logistics.png')] bg-cover bg-center opacity-30 group-hover:opacity-60 transition-opacity duration-500 mix-blend-luminosity hover:mix-blend-normal" />
+                                <div className="absolute inset-0 bg-[url('/phase4-logistics.avif')] bg-cover bg-center opacity-30 group-hover:opacity-60 transition-opacity duration-500 mix-blend-luminosity hover:mix-blend-normal" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
                                 <span className="relative z-10 text-xs text-aldurr-honey font-bold tracking-widest uppercase italic">Fase 4</span>
                                 <h5 className="relative z-10 text-sm font-bold text-white uppercase tracking-widest drop-shadow-md">Logística <br />Especializada</h5>

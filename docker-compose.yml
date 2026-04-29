@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile.dev
     container_name: al_durr_dev
     ports:
-      - "3060:3000"
+      - "3030:3000"
     volumes:
       - .:/app
       - /app/node_modules

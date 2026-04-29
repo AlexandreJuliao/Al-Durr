@@ -42,7 +42,7 @@ export default function GaleriaPage() {
                     {/* Living Room - Large Feature */}
                     <div className="md:col-span-2 relative h-[300px] md:h-[600px] group border border-white/5 rounded-sm overflow-hidden">
                         <div className="relative w-full h-full">
-                            <Image src="/interior-living-new.png" alt="Living Room Luxury" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                            <Image src="/interior-living-new.avif" alt="Living Room Luxury" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                             <div className="absolute bottom-8 left-8 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                                 Living Room
@@ -54,7 +54,7 @@ export default function GaleriaPage() {
                     {/* Mezzanine Bedroom */}
                     <div className="relative h-[300px] md:h-[600px] group border border-white/5 rounded-sm overflow-hidden">
                         <div className="relative w-full h-full">
-                            <Image src="/interior-bedroom.png" alt="Mezzanine Bedroom" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                            <Image src="/interior-bedroom.avif" alt="Mezzanine Bedroom" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                             <div className="absolute bottom-8 left-8 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                                 Master Suite
@@ -65,28 +65,28 @@ export default function GaleriaPage() {
 
                     {/* Kitchen */}
                     <div className="relative h-[300px] group border border-white/5 rounded-sm overflow-hidden">
-                        <Image src="/interior-kitchen-new.png" alt="Minimalist Kitchen" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                        <Image src="/interior-kitchen-new.avif" alt="Minimalist Kitchen" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                         <div className="absolute bottom-8 left-8 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">Kitchen</div>
                     </div>
 
                     {/* Spa Bathroom */}
                     <div className="relative h-[300px] group border border-white/5 rounded-sm overflow-hidden">
-                        <Image src="/interior-bathroom.png" alt="Spa Bathroom" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                        <Image src="/interior-bathroom.avif" alt="Spa Bathroom" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                         <div className="absolute bottom-8 left-8 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">Spa Bath</div>
                     </div>
 
                     {/* Office */}
                     <div className="relative h-[300px] group border border-white/5 rounded-sm overflow-hidden">
-                        <Image src="/interior-office.png" alt="Home Office" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                        <Image src="/interior-office.avif" alt="Home Office" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                         <div className="absolute bottom-8 left-8 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">Studio Office</div>
                     </div>
 
                     {/* Dining Room - Full Width */}
                     <div className="relative h-[300px] md:col-span-3 group border border-white/5 rounded-sm overflow-hidden">
-                        <Image src="/interior-dining.png" alt="Dining Area" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                        <Image src="/interior-dining.avif" alt="Dining Area" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                         <div className="absolute bottom-8 left-8 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">Dining Area</div>
                     </div>
@@ -127,18 +127,18 @@ export default function GaleriaPage() {
                         <div className="grid grid-cols-2 gap-4">
                             <div className="space-y-4">
                                 <div className="h-[300px] relative rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                                    <Image src="/t1-model.jpg" alt="Material 1" fill className="object-cover" />
+                                    <Image src="/t1-model.avif" alt="Material 1" fill className="object-cover" />
                                 </div>
                                 <div className="h-[200px] relative rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                                    <Image src="/t2-model.jpg" alt="Material 2" fill className="object-cover" />
+                                    <Image src="/t2-model.avif" alt="Material 2" fill className="object-cover" />
                                 </div>
                             </div>
                             <div className="space-y-4 pt-12">
                                 <div className="h-[200px] relative rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                                    <Image src="/t-multi-model.jpg" alt="Material 3" fill className="object-cover" />
+                                    <Image src="/t-multi-model.avif" alt="Material 3" fill className="object-cover" />
                                 </div>
                                 <div className="h-[300px] relative rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                                    <Image src="/interior-living-new.png" alt="Material 4" fill className="object-cover" />
+                                    <Image src="/interior-living-new.avif" alt="Material 4" fill className="object-cover" />
                                 </div>
                             </div>
                         </div>
