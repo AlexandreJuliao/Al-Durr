@@ -5,6 +5,7 @@ import Script from "next/script";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import SmoothScrolling from "@/components/SmoothScrolling";
+import FloatingCTA from "@/components/ui/FloatingCTA";
 
 const geistSans = Inter({
   subsets: ["latin"],
@@ -69,6 +70,7 @@ export default function RootLayout({
         <LanguageProvider>
           <SmoothScrolling>
             {children}
+            <FloatingCTA />
           </SmoothScrolling>
         </LanguageProvider>
       </body>

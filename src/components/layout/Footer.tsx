@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import Link from "next/link";
 import Magnetic from "@/components/ui/Magnetic";
 
 export default function Footer() {
@@ -28,9 +29,11 @@ export default function Footer() {
                         </p>
 
                         <Magnetic>
-                            <button className="px-12 py-5 bg-gold-metallic text-aldurr-canvas text-xs font-bold tracking-[0.25em] uppercase rounded-full hover:brightness-110 transition-all duration-500 shadow-2xl hover:shadow-[0_0_30px_rgba(45,90,66,0.3)] hover:scale-105 active:scale-95">
-                                Agendar Reunião
-                            </button>
+                            <Link href="/contactos#contact-form">
+                                <button className="px-12 py-5 bg-gold-metallic text-aldurr-canvas text-xs font-bold tracking-[0.25em] uppercase rounded-full hover:brightness-110 transition-all duration-500 shadow-2xl hover:shadow-[0_0_30px_rgba(45,90,66,0.3)] hover:scale-105 active:scale-95">
+                                    Agendar Reunião
+                                </button>
+                            </Link>
                         </Magnetic>
                     </motion.div>
                 </div>

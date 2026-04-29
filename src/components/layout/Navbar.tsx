@@ -101,7 +101,7 @@ export default function Navbar() {
 
                 {/* CTA */}
                 <Magnetic>
-                    <Link href="/contactos">
+                    <Link href="/contactos#contact-form">
                         <button className="px-4 lg:px-8 py-2.5 lg:py-3 bg-gold-metallic text-aldurr-canvas text-[9px] lg:text-[10px] font-bold tracking-[0.2em] rounded-full hover:brightness-110 hover:shadow-[0_0_20px_rgba(45,90,66,0.4)] transition-all duration-500 uppercase shadow-lg shadow-aldurr-accent/20 whitespace-nowrap">
                             {t.nav.cta}
                         </button>
@@ -139,7 +139,7 @@ export default function Navbar() {
                         <button onClick={() => switchLanguage("pt")} className={`${locale === "pt" ? "text-white font-bold" : "text-aldurr-text-muted"}`}>PT</button>
                         <button onClick={() => switchLanguage("en")} className={`${locale === "en" ? "text-white font-bold" : "text-aldurr-text-muted"}`}>EN</button>
                     </div>
-                    <Link href="/contactos" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link href="/contactos#contact-form" onClick={() => setIsMobileMenuOpen(false)}>
                         <button className="px-10 py-4 bg-white/5 border border-white/10 text-white rounded-full uppercase text-xs tracking-widest hover:bg-aldurr-honey hover:text-aldurr-void transition-colors">
                             {t.nav.cta}
                         </button>

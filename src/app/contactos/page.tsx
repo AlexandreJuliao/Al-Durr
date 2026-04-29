@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContactForm from "@/components/forms/ContactForm";
@@ -95,7 +94,7 @@ export default function ContactosPage() {
             </section>
 
             {/* Split Contact Section */}
-            <section className="bg-aldurr-stone border-t border-white/5 relative z-10">
+            <section id="contact-form" className="bg-aldurr-stone border-t border-white/5 relative z-10">
                 <div className="container mx-auto px-4 py-24 grid lg:grid-cols-2 gap-20">
 
                     {/* Left: Info */}
