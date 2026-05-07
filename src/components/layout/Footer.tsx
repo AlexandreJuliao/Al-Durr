@@ -63,7 +63,7 @@ export default function Footer() {
                     <div className="space-y-4 md:text-center">
                         <div className="uppercase tracking-[0.2em] text-[10px] text-aldurr-green mb-6 font-bold">Contact</div>
                         <div className="flex flex-col gap-3">
-                            <a href="mailto:al.durr@outlook.com" className="hover:text-aldurr-text-body transition-colors">al.durr@outlook.com</a>
+                            <a href="mailto:grupo@tatierica.pt" className="hover:text-aldurr-text-body transition-colors">grupo@tatierica.pt</a>
                             <a href="tel:+351935994555" className="hover:text-aldurr-text-body transition-colors">+351 935 994 555</a>
                             <p className="text-[11px] opacity-70 mt-2">R. Nossa Sra. da Graça Póvoa de Penafirme 119<br />2560-046 Torres Vedras, Portugal</p>
                         </div>
