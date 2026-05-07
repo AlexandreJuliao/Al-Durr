@@ -28,8 +28,11 @@ export default function HeroAnimation() {
                         muted
                         loop
                         playsInline
+                        preload="auto"
+                        poster="/hero-new/frame_000.jpg"
                         className="w-full h-full object-cover md:object-center object-[70%_center] opacity-85 md:opacity-90 mix-blend-normal scale-110 origin-top brightness-[0.85] contrast-[1.05]"
                     >
+                        <source src="/videos/hero-background.mp4" type="video/mp4" />
                         <source src="/videos/hero-background.webm" type="video/webm" />
                     </video>
                     
