@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import * as fp from "@/lib/fpixel";
 
 
 const models = [
@@ -89,7 +90,15 @@ export default function ModelsSection() {
                         {models.map((model, idx) => (
                             <div
                                 key={model.id}
-                                onClick={() => setActiveModel(idx)}
+                                onClick={() => {
+                                    setActiveModel(idx);
+                                    fp.event("ViewContent", { 
+                                        content_name: model.title,
+                                        content_category: "Models",
+                                        content_ids: [model.id],
+                                        content_type: "product"
+                                    });
+                                }}
                                 className={`group p-8 border cursor-pointer transition-all duration-500 relative overflow-hidden backdrop-blur-3xl transition-all duration-500 ${activeModel === idx
                                     ? "bg-aldurr-canvas/40 border-aldurr-honey/50 shadow-[0_0_30px_rgba(198,156,109,0.1)]"
                                     : "bg-white/[0.02] border-white/10 hover:border-white/30 hover:bg-white/[0.05]"

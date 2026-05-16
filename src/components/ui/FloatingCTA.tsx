@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { MessageSquare } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import * as fp from "@/lib/fpixel";
 
 export default function FloatingCTA() {
     const [isVisible, setIsVisible] = useState(false);
@@ -32,7 +33,10 @@ export default function FloatingCTA() {
                     className="fixed bottom-8 right-8 z-[100]"
                 >
                     <Link href="/contactos#contact-form">
-                        <button className="group relative flex items-center gap-3 px-6 py-4 bg-gold-metallic text-aldurr-canvas rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_rgba(198,156,109,0.4)] transition-all duration-500 overflow-hidden">
+                        <button 
+                            onClick={() => fp.event("Contact", { content_name: "Floating CTA Pedir Orçamento" })}
+                            className="group relative flex items-center gap-3 px-6 py-4 bg-gold-metallic text-aldurr-canvas rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_rgba(198,156,109,0.4)] transition-all duration-500 overflow-hidden"
+                        >
                             {/* Inner Shine */}
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                             

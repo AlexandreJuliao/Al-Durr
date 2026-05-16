@@ -6,6 +6,8 @@ import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import FloatingCTA from "@/components/ui/FloatingCTA";
+import FacebookPixel from "@/components/analytics/FacebookPixel";
+import { Suspense } from "react";
 
 const geistSans = Inter({
   subsets: ["latin"],
@@ -45,6 +47,9 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${cormorant.variable} antialiased bg-aldurr-void text-aldurr-text-heading selection:bg-aldurr-accent selection:text-aldurr-canvas`}
       >
+        <Suspense fallback={null}>
+          <FacebookPixel />
+        </Suspense>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-8BPXJDE5GW"
           strategy="afterInteractive"

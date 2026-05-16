@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import * as fp from "@/lib/fpixel";
+import { useRouter } from "next/navigation";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
@@ -14,6 +16,7 @@ export default function ContactForm() {
         message: ""
     });
     const [status, setStatus] = useState<FormStatus>("idle");
+    const router = useRouter();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -37,36 +40,25 @@ export default function ContactForm() {
 
             if (!res.ok) throw new Error("Erro ao enviar");
 
+            // Trigger Facebook Pixel Lead event
+            fp.event("Lead", {
+                content_name: "Contact Form",
+                content_category: "Leads",
+                value: 0,
+                currency: "EUR"
+            });
+
             setStatus("success");
             setFormData({ name: "", email: "", phone: "", landStatus: "tenho_terreno", location: "", model: "t1", message: "" });
+            
+            // Redirect to Thank You page
+            router.push("/obrigado");
         } catch {
             setStatus("error");
         }
     };
 
-    if (status === "success") {
-        return (
-            <div className="flex flex-col items-center justify-center py-16 text-center space-y-6">
-                <div className="w-16 h-16 rounded-full border-2 border-aldurr-honey flex items-center justify-center">
-                    <svg className="w-8 h-8 text-aldurr-honey" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                </div>
-                <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Pedido Recebido</h3>
-                    <p className="text-white/50 font-light max-w-xs">
-                        A nossa equipa irá entrar em contacto em breve.
-                    </p>
-                </div>
-                <button
-                    onClick={() => setStatus("idle")}
-                    className="text-xs text-aldurr-honey/60 uppercase tracking-widest hover:text-aldurr-honey transition-colors"
-                >
-                    Enviar outro pedido
-                </button>
-            </div>
-        );
-    }
+    // Success state is now handled by redirect
 
     return (
         <form onSubmit={handleSubmit} className="space-y-8">
