@@ -1,0 +1,8 @@
+  ▲ Next.js 14.2.16
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/julas/Desktop/Websites Geral/Al Durr/.next/cache/webpack/server-production/9.pack_' -> '/Users/julas/Desktop/Websites Geral/Al Durr/.next/cache/webpack/server-production/9.pack'
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/julas/Desktop/Websites Geral/Al Durr/.next/cache/webpack/client-production/3.pack_' -> '/Users/julas/Desktop/Websites Geral/Al Durr/.next/cache/webpack/client-production/3.pack'
+ ✓ Compiled successfully
+   Linting and checking validity of types ...

@@ -31,7 +31,6 @@ export default function ThankYouPage() {
                     >
                         <Check className="w-12 h-12 text-aldurr-honey" strokeWidth={1.5} />
                     </motion.div>
-                    {/* Pulsing ring */}
                     <div className="absolute inset-0 rounded-full border border-aldurr-honey animate-ping opacity-20" />
                 </motion.div>
 
@@ -51,7 +50,7 @@ export default function ThankYouPage() {
                     className="text-5xl md:text-8xl font-bold tracking-tight mb-8 font-display"
                 >
                     Obrigado <br />
-                    <span className="text-transparent font-outline-2 italic">pela Confiança.</span>
+                    <span className="text-transparent font-outline-2 italic">pela Confian&ccedil;a.</span>
                 </motion.h1>
 
                 <motion.p
@@ -60,7 +59,7 @@ export default function ThankYouPage() {
                     transition={{ delay: 0.6, duration: 0.8 }}
                     className="text-xl text-aldurr-text-body/50 max-w-2xl mx-auto font-light leading-relaxed mb-12"
                 >
-                    A sua visão agora faz parte do nosso radar. A nossa equipa de engenharia e design irá analisar os seus dados e entrará em contacto num prazo de 24-48 horas.
+                    A sua vis&atilde;o agora faz parte do nosso radar. A nossa equipa de engenharia e design ir&aacute; analisar os seus dados e entrar&aacute; em contacto num prazo de 24-48 horas.
                 </motion.p>
 
                 <motion.div
@@ -70,13 +69,12 @@ export default function ThankYouPage() {
                 >
                     <Link href="/">
                         <button className="group relative px-10 py-5 bg-white text-aldurr-canvas font-bold text-xs tracking-[0.3em] uppercase overflow-hidden transition-all duration-500 hover:bg-aldurr-honey hover:text-white">
-                            <span className="relative z-10">Voltar à Página Inicial</span>
+                            <span className="relative z-10">Voltar &agrave; P&aacute;gina Inicial</span>
                             <div className="absolute inset-0 bg-gold-metallic translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                         </button>
                     </Link>
                 </motion.div>
 
-                {/* Decorative scanning line */}
                 <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-aldurr-honey/20 to-transparent" />
             </section>
 

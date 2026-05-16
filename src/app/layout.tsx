@@ -1,4 +1,3 @@
-// Trigger build: 2026-04-10
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Outfit, Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
@@ -6,8 +5,6 @@ import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import FloatingCTA from "@/components/ui/FloatingCTA";
-import FacebookPixel from "@/components/analytics/FacebookPixel";
-import { Suspense } from "react";
 
 const geistSans = Inter({
   subsets: ["latin"],
@@ -47,9 +44,30 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${cormorant.variable} antialiased bg-aldurr-void text-aldurr-text-heading selection:bg-aldurr-accent selection:text-aldurr-canvas`}
       >
-        <Suspense fallback={null}>
-          <FacebookPixel />
-        </Suspense>
+        {/* Meta Pixel Code */}
+        <Script id="fb-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1589728065448469');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1589728065448469&ev=PageView&noscript=1"
+          />
+        </noscript>
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-8BPXJDE5GW"
           strategy="afterInteractive"
