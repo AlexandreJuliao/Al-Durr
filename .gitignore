@@ -37,4 +37,5 @@ next-env.d.ts
 .agent/
 /Hero
 /node_modules_corrupted_*
+/node_modules_old
 .next_log

@@ -42,6 +42,7 @@ const models = [
 export default function ModelsSection() {
 
     const [activeModel, setActiveModel] = useState(0);
+    const [isIpModalOpen, setIsIpModalOpen] = useState(false);
 
     return (
         <section id="models" className="relative pt-16 pb-24 text-aldurr-text-body overflow-hidden bg-aldurr-void">
@@ -146,6 +147,20 @@ export default function ModelsSection() {
                                         </div>
                                     </div>
 
+                                    {/* Patent Badge */}
+                                    <div 
+                                        onClick={() => setIsIpModalOpen(true)}
+                                        className="group/ip-badge flex items-center gap-2 px-2.5 py-1.5 bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-aldurr-honey/30 rounded-none transition-all duration-300 cursor-pointer pointer-events-auto w-fit mb-4 mt-2"
+                                    >
+                                        <span className="relative flex h-1.5 w-1.5">
+                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-aldurr-honey opacity-75"></span>
+                                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-aldurr-honey"></span>
+                                        </span>
+                                        <span className="text-[8px] font-bold tracking-[0.2em] text-white/70 group-hover/ip-badge:text-aldurr-honey transition-colors uppercase select-none">
+                                            Design Patenteado & Registado
+                                        </span>
+                                    </div>
+
                                     <p className="text-sm text-aldurr-text-body/60 font-light leading-relaxed mb-6">
                                         {model.desc}
                                     </p>
@@ -233,6 +248,91 @@ export default function ModelsSection() {
                     </div>
                 </div>
             </div>
+
+            {/* Modal de Propriedade Intelectual */}
+            {isIpModalOpen && (
+                <div 
+                    className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-aldurr-void/90 backdrop-blur-md transition-opacity duration-300 pointer-events-auto"
+                    onClick={() => setIsIpModalOpen(false)}
+                >
+                    <div 
+                        className="relative w-full max-w-lg bg-aldurr-void border border-white/10 rounded-none p-6 md:p-8 shadow-2xl text-left overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Elegant background lines */}
+                        <div className="absolute top-0 right-0 w-32 h-32 opacity-[0.02] pointer-events-none">
+                            <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0 L100 100 M100 0 L0 100" stroke="#C69C6D" strokeWidth="2" />
+                            </svg>
+                        </div>
+
+                        {/* Modal Header */}
+                        <div className="flex items-center gap-3 border-b border-white/10 pb-4 mb-6">
+                            <div className="w-8 h-8 rounded-none border border-aldurr-honey/40 flex items-center justify-center text-aldurr-honey">
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 className="text-sm md:text-base font-bold tracking-[0.2em] uppercase bg-gold-metallic bg-clip-text text-transparent">
+                                    Propriedade Intelectual
+                                </h3>
+                                <p className="text-[10px] text-white/50 uppercase tracking-widest mt-0.5">
+                                    Patente de Design Arquitetónico Registada
+                                </p>
+                            </div>
+                            <button 
+                                onClick={() => setIsIpModalOpen(false)}
+                                className="ml-auto w-8 h-8 flex items-center justify-center hover:bg-white/5 border border-transparent hover:border-white/10 rounded-none text-white/50 hover:text-white transition-all duration-300"
+                            >
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        {/* Modal Body */}
+                        <div className="flex flex-col gap-6 text-xs md:text-sm text-white/70 font-light leading-relaxed">
+                            <div className="flex flex-col gap-2">
+                                <h4 className="font-bold text-white tracking-widest text-[11px] uppercase">
+                                    1. Exclusividade do Investimento
+                                </h4>
+                                <p className="text-white/60">
+                                    O design tridimensional, a volumetria e o layout de distribuição funcional da moradia <strong>Al Durr</strong> estão protegidos por registo de design industrial e direitos de autor de arquitetura. Isto garante que a sua moradia seja uma obra de arte exclusiva e irreplicável no mercado.
+                                </p>
+                            </div>
+
+                            <div className="flex flex-col gap-2">
+                                <h4 className="font-bold text-white tracking-widest text-[11px] uppercase">
+                                    2. Proteção Jurídica Contra Imitações
+                                </h4>
+                                <p className="text-white/60">
+                                    A reprodução, cópia ou imitação não autorizada deste layout ou da sua fachada tridimensional, quer por parte de arquitetos, construtores ou promotores imobiliários, é estritamente proibida nos termos do <strong>Código do Direito de Autor e dos Direitos Conexos</strong> e dos regulamentos de propriedade intelectual. Qualquer violação será alvo de procedimento legal imediato.
+                                </p>
+                            </div>
+
+                            <div className="flex flex-col gap-2">
+                                <h4 className="font-bold text-white tracking-widest text-[11px] uppercase">
+                                    3. Garantia de Autenticidade
+                                </h4>
+                                <p className="text-white/60">
+                                    Cada obra licenciada do projeto Al Durr recebe uma placa de metal gravada com o número de registo de autenticidade exclusivo, certificando que a engenharia inteligente, a bio-estrutura e os acabamentos premium obedecem estritamente aos padrões patenteados originais.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Modal Footer */}
+                        <div className="mt-8 pt-4 border-t border-white/10 flex justify-end">
+                            <button 
+                                onClick={() => setIsIpModalOpen(false)}
+                                className="px-6 py-2.5 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-white/20 text-white rounded-none text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-300"
+                            >
+                                Compreendido
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </section>
     );
 }

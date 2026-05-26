@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 export default function HeroAnimation() {
     const triggerRef = useRef<HTMLDivElement>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
         <div ref={triggerRef} className="relative h-screen w-full bg-aldurr-void text-white overflow-hidden selection:bg-aldurr-honey/30">
@@ -50,6 +51,23 @@ export default function HeroAnimation() {
                             <div className="absolute -inset-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-[2.5s] pointer-events-none" />
 
                             <div className="flex flex-col gap-5 lg:gap-12 relative z-10 w-full px-2">
+                                {/* Official Registration & Patent Badge */}
+                                <div 
+                                    onClick={() => setIsModalOpen(true)}
+                                    className="group/badge flex items-center gap-2.5 px-3 py-2 bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-aldurr-honey/30 rounded-none transition-all duration-300 cursor-pointer pointer-events-auto w-full"
+                                >
+                                    <span className="relative flex h-2 w-2">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-aldurr-honey opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-aldurr-honey"></span>
+                                    </span>
+                                    <span className="text-[9px] md:text-[8px] lg:text-[10px] font-bold tracking-[0.25em] text-white/70 group-hover/badge:text-aldurr-honey transition-colors uppercase select-none">
+                                        Design Registado & Patenteado
+                                    </span>
+                                    <svg className="w-3 h-3 text-white/30 group-hover/badge:text-aldurr-honey ml-auto transform group-hover/badge:translate-x-0.5 transition-all duration-300" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+
                                 {/* Major Highlights */}
                                 <div className="flex flex-row items-center justify-between gap-3 lg:gap-8">
                                     <div className="flex-1 group flex flex-col cursor-default">
@@ -115,6 +133,91 @@ export default function HeroAnimation() {
                 </div>
 
             </div>
+
+            {/* Modal de Propriedade Intelectual */}
+            {isModalOpen && (
+                <div 
+                    className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-aldurr-void/90 backdrop-blur-md transition-opacity duration-300 pointer-events-auto"
+                    onClick={() => setIsModalOpen(false)}
+                >
+                    <div 
+                        className="relative w-full max-w-lg bg-aldurr-void border border-white/10 rounded-none p-6 md:p-8 shadow-2xl text-left overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Elegant background lines */}
+                        <div className="absolute top-0 right-0 w-32 h-32 opacity-[0.02] pointer-events-none">
+                            <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0 L100 100 M100 0 L0 100" stroke="#C69C6D" strokeWidth="2" />
+                            </svg>
+                        </div>
+
+                        {/* Modal Header */}
+                        <div className="flex items-center gap-3 border-b border-white/10 pb-4 mb-6">
+                            <div className="w-8 h-8 rounded-none border border-aldurr-honey/40 flex items-center justify-center text-aldurr-honey">
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 className="text-sm md:text-base font-bold tracking-[0.2em] uppercase bg-gold-metallic bg-clip-text text-transparent">
+                                    Propriedade Intelectual
+                                </h3>
+                                <p className="text-[10px] text-white/50 uppercase tracking-widest mt-0.5">
+                                    Patente de Design Arquitetónico Registada
+                                </p>
+                            </div>
+                            <button 
+                                onClick={() => setIsModalOpen(false)}
+                                className="ml-auto w-8 h-8 flex items-center justify-center hover:bg-white/5 border border-transparent hover:border-white/10 rounded-none text-white/50 hover:text-white transition-all duration-300"
+                            >
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        {/* Modal Body */}
+                        <div className="flex flex-col gap-6 text-xs md:text-sm text-white/70 font-light leading-relaxed">
+                            <div className="flex flex-col gap-2">
+                                <h4 className="font-bold text-white tracking-widest text-[11px] uppercase">
+                                    1. Exclusividade do Investimento
+                                </h4>
+                                <p className="text-white/60">
+                                    O design tridimensional, a volumetria e o layout de distribuição funcional da moradia <strong>Al Durr</strong> estão protegidos por registo de design industrial e direitos de autor de arquitetura. Isto garante que a sua moradia seja uma obra de arte exclusiva e irreplicável no mercado.
+                                </p>
+                            </div>
+
+                            <div className="flex flex-col gap-2">
+                                <h4 className="font-bold text-white tracking-widest text-[11px] uppercase">
+                                    2. Proteção Jurídica Contra Imitações
+                                </h4>
+                                <p className="text-white/60">
+                                    A reprodução, cópia ou imitação não autorizada deste layout ou da sua fachada tridimensional, quer por parte de arquitetos, construtores ou promotores imobiliários, é estritamente proibida nos termos do <strong>Código do Direito de Autor e dos Direitos Conexos</strong> e dos regulamentos de propriedade intelectual. Qualquer violação será alvo de procedimento legal imediato.
+                                </p>
+                            </div>
+
+                            <div className="flex flex-col gap-2">
+                                <h4 className="font-bold text-white tracking-widest text-[11px] uppercase">
+                                    3. Garantia de Autenticidade
+                                </h4>
+                                <p className="text-white/60">
+                                    Cada obra licenciada do projeto Al Durr recebe uma placa de metal gravada com o número de registo de autenticidade exclusivo, certificando que a engenharia inteligente, a bio-estrutura e os acabamentos premium obedecem estritamente aos padrões patenteados originais.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Modal Footer */}
+                        <div className="mt-8 pt-4 border-t border-white/10 flex justify-end">
+                            <button 
+                                onClick={() => setIsModalOpen(false)}
+                                className="px-6 py-2.5 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-white/20 text-white rounded-none text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-300"
+                            >
+                                Compreendido
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
