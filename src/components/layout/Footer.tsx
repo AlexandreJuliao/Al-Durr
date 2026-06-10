@@ -70,6 +70,11 @@ export default function Footer() {
                     </div>
 
                     <div className="md:text-right flex flex-col justify-end h-full">
+                        <div className="flex md:justify-end gap-4 mb-4 text-[12px]">
+                            <Link href="/privacidade" className="hover:text-aldurr-text-body transition-colors">Privacidade</Link>
+                            <span className="opacity-30 select-none">·</span>
+                            <Link href="/termos" className="hover:text-aldurr-text-body transition-colors">Termos</Link>
+                        </div>
                         <p className="hover:text-aldurr-text-body transition-colors">&copy; {new Date().getFullYear()} Al Durr Architecture.</p>
                         <p className="text-[10px] mt-2 uppercase tracking-widest opacity-50">All rights reserved.</p>
                     </div>
