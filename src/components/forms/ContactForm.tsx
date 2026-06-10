@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import * as fp from "@/lib/fpixel";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
@@ -16,6 +17,7 @@ export default function ContactForm() {
         message: ""
     });
     const [status, setStatus] = useState<FormStatus>("idle");
+    const [consent, setConsent] = useState(false);
     const router = useRouter();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -24,6 +26,7 @@ export default function ContactForm() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (!consent) return;
         setStatus("loading");
 
         try {
@@ -50,6 +53,7 @@ export default function ContactForm() {
 
             setStatus("success");
             setFormData({ name: "", email: "", phone: "", landStatus: "tenho_terreno", location: "", model: "t1", message: "" });
+            setConsent(false);
             
             // Redirect to Thank You page
             router.push("/obrigado");
@@ -176,9 +180,27 @@ export default function ContactForm() {
                 </p>
             )}
 
+            <label className="flex items-start gap-3 cursor-pointer text-white/60 text-[13px] leading-relaxed">
+                <input
+                    type="checkbox"
+                    name="consent"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                    required
+                    className="mt-0.5 w-4 h-4 shrink-0 accent-aldurr-honey"
+                />
+                <span>
+                    Li e aceito a{" "}
+                    <Link href="/privacidade" className="text-aldurr-honey underline underline-offset-2 hover:brightness-125">
+                        Política de Privacidade
+                    </Link>{" "}
+                    e consinto o tratamento dos meus dados para resposta ao meu pedido.
+                </span>
+            </label>
+
             <button
                 type="submit"
-                disabled={status === "loading"}
+                disabled={status === "loading" || !consent}
                 className="w-full py-4 bg-aldurr-accent text-aldurr-canvas font-bold text-sm tracking-[0.2em] uppercase hover:bg-white transition-colors duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 {status === "loading" ? "A enviar..." : "Enviar Pedido"}

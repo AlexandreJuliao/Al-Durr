@@ -17,7 +17,7 @@ const CONTENT: Record<"pt" | "en", { title: string; updated: string; intro: stri
             {
                 h: "1. Responsável pelo tratamento",
                 p: [
-                    "Al Durr — R. Nossa Sra. da Graça, Póvoa de Penafirme 119, 2560-046 Torres Vedras, Portugal.",
+                    "REPORLAR CONSTRUÇÕES, LDA (marca Al Durr) — pessoa coletiva n.º 516583409 — R. Nossa Sra. da Graça, Póvoa de Penafirme 119, 2560-046 Torres Vedras, Portugal.",
                     "Email: grupo@tatierica.pt · Telefone: +351 935 994 555.",
                 ],
             },
@@ -102,7 +102,7 @@ const CONTENT: Record<"pt" | "en", { title: string; updated: string; intro: stri
             {
                 h: "1. Data controller",
                 p: [
-                    "Al Durr — R. Nossa Sra. da Graça, Póvoa de Penafirme 119, 2560-046 Torres Vedras, Portugal.",
+                    "REPORLAR CONSTRUÇÕES, LDA (marca Al Durr) — pessoa coletiva n.º 516583409 — R. Nossa Sra. da Graça, Póvoa de Penafirme 119, 2560-046 Torres Vedras, Portugal.",
                     "Email: grupo@tatierica.pt · Phone: +351 935 994 555.",
                 ],
             },
