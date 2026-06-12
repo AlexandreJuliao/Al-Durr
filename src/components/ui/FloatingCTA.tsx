@@ -4,12 +4,17 @@ import React, { useState, useEffect } from "react";
 import { MessageSquare } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import * as fp from "@/lib/fpixel";
 
 export default function FloatingCTA() {
     const [isVisible, setIsVisible] = useState(false);
+    const pathname = usePathname();
+    const isBackoffice = pathname?.startsWith("/backoffice");
 
     useEffect(() => {
+        if (isBackoffice) return;
+
         const handleScroll = () => {
             // Show after scrolling 500px
             if (window.scrollY > 500) {
@@ -22,6 +27,8 @@ export default function FloatingCTA() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    if (isBackoffice) return null;
 
     return (
         <AnimatePresence>
