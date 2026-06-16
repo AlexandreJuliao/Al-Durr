@@ -14,7 +14,7 @@ const CONTENT: Record<"pt" | "en", { title: string; updated: string; intro: stri
             "Estes Termos e Condições regem o acesso e a utilização do website da Al Durr e dos seus canais de contacto. Ao utilizar o site, aceita estes termos.",
         ],
         sections: [
-            { h: "1. Identificação", p: ["REPORLAR CONSTRUÇÕES, LDA (marca Al Durr) — pessoa coletiva n.º 516583409 — Rua Fialho de Almeida, n.º 14, 2.º Esq, 1070-129 Lisboa, Portugal. Email: grupo@tatierica.pt · Telefone: +351 935 994 555."] },
+            { h: "1. Identificação", p: ["REPORLAR CONSTRUÇÕES, LDA (marca Al Durr) — pessoa coletiva n.º 516583409 — Rua Fialho de Almeida, n.º 14, 2.º Esq, 1070-129 Lisboa, Portugal. Email: geral@inovaldurr.pt · Telefone: +351 935 994 555."] },
             { h: "2. Objeto", p: ["O site destina-se à apresentação das moradias modulares Al Durr e ao contacto com potenciais clientes. Não constitui, por si só, uma proposta contratual vinculativa."] },
             { h: "3. Orçamentos e informações", p: ["Os valores, plantas e prazos apresentados são indicativos e podem variar consoante o projeto, o terreno e o licenciamento. Qualquer compromisso depende de proposta escrita e contrato específico."] },
             { h: "4. Propriedade intelectual", p: ["Todos os conteúdos do site (textos, imagens, vídeos, marca, design e arquitetura das moradias) são propriedade da Al Durr ou licenciados, e não podem ser copiados ou reutilizados sem autorização escrita."] },
@@ -23,7 +23,7 @@ const CONTENT: Record<"pt" | "en", { title: string; updated: string; intro: stri
             { h: "7. Limitação de responsabilidade", p: ["A Al Durr não se responsabiliza por interrupções do site nem por decisões tomadas com base em informação indicativa. O site pode conter ligações para terceiros, pelos quais não nos responsabilizamos."] },
             { h: "8. Lei aplicável e foro", p: ["Estes termos regem-se pela lei portuguesa. Para qualquer litígio, é competente o foro da comarca de Lisboa, sem prejuízo dos direitos do consumidor."] },
             { h: "9. Alterações", p: ["A Al Durr pode atualizar estes termos a qualquer momento. A versão em vigor está sempre disponível nesta página."] },
-            { h: "10. Contacto", p: ["Para qualquer questão sobre estes termos: grupo@tatierica.pt."] },
+            { h: "10. Contacto", p: ["Para qualquer questão sobre estes termos: geral@inovaldurr.pt."] },
         ],
     },
     en: {
@@ -31,7 +31,7 @@ const CONTENT: Record<"pt" | "en", { title: string; updated: string; intro: stri
         updated: "Last updated: June 2026",
         intro: ["These Terms & Conditions govern access to and use of the Al Durr website and its contact channels. By using the site, you accept these terms."],
         sections: [
-            { h: "1. Identification", p: ["REPORLAR CONSTRUÇÕES, LDA (marca Al Durr) — pessoa coletiva n.º 516583409 — Rua Fialho de Almeida, n.º 14, 2.º Esq, 1070-129 Lisboa, Portugal. Email: grupo@tatierica.pt · Phone: +351 935 994 555."] },
+            { h: "1. Identification", p: ["REPORLAR CONSTRUÇÕES, LDA (marca Al Durr) — pessoa coletiva n.º 516583409 — Rua Fialho de Almeida, n.º 14, 2.º Esq, 1070-129 Lisboa, Portugal. Email: geral@inovaldurr.pt · Phone: +351 935 994 555."] },
             { h: "2. Purpose", p: ["The site presents Al Durr modular homes and enables contact with prospective clients. It does not, by itself, constitute a binding contractual offer."] },
             { h: "3. Quotes and information", p: ["Prices, plans and timelines shown are indicative and may vary with the project, land and permitting. Any commitment depends on a written proposal and specific contract."] },
             { h: "4. Intellectual property", p: ["All site content (text, images, videos, brand, design and home architecture) belongs to Al Durr or is licensed, and may not be copied or reused without written permission."] },
@@ -40,7 +40,7 @@ const CONTENT: Record<"pt" | "en", { title: string; updated: string; intro: stri
             { h: "7. Limitation of liability", p: ["Al Durr is not liable for site interruptions or for decisions made based on indicative information. The site may contain third-party links, for which we are not responsible."] },
             { h: "8. Governing law and jurisdiction", p: ["These terms are governed by Portuguese law. Any dispute is subject to the courts of Lisbon, without prejudice to consumer rights."] },
             { h: "9. Changes", p: ["Al Durr may update these terms at any time. The current version is always available on this page."] },
-            { h: "10. Contact", p: ["For any question about these terms: grupo@tatierica.pt."] },
+            { h: "10. Contact", p: ["For any question about these terms: geral@inovaldurr.pt."] },
         ],
     },
 };

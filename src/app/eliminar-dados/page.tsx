@@ -16,7 +16,7 @@ const CONTENT: Record<"pt" | "en", { title: string; updated: string; intro: stri
         sections: [
             {
                 h: "Como pedir a eliminação",
-                p: ["Envie um email para grupo@tatierica.pt com:"],
+                p: ["Envie um email para geral@inovaldurr.pt com:"],
                 ul: [
                     "Assunto: «Pedido de eliminação de dados»;",
                     "O nome, email e/ou telefone que usou ao contactar-nos;",
@@ -36,7 +36,7 @@ const CONTENT: Record<"pt" | "en", { title: string; updated: string; intro: stri
             {
                 h: "Contacto e reclamações",
                 p: [
-                    "Responsável: REPORLAR CONSTRUÇÕES, LDA — pessoa coletiva n.º 516583409 — Rua Fialho de Almeida, n.º 14, 2.º Esq, 1070-129 Lisboa. Email: grupo@tatierica.pt.",
+                    "Responsável: REPORLAR CONSTRUÇÕES, LDA — pessoa coletiva n.º 516583409 — Rua Fialho de Almeida, n.º 14, 2.º Esq, 1070-129 Lisboa. Email: geral@inovaldurr.pt.",
                     "Pode também reclamar junto da CNPD (www.cnpd.pt). Ver também a nossa Política de Privacidade.",
                 ],
             },
@@ -51,7 +51,7 @@ const CONTENT: Record<"pt" | "en", { title: string; updated: string; intro: stri
         sections: [
             {
                 h: "How to request deletion",
-                p: ["Send an email to grupo@tatierica.pt with:"],
+                p: ["Send an email to geral@inovaldurr.pt with:"],
                 ul: [
                     "Subject: “Data deletion request”;",
                     "The name, email and/or phone you used to contact us;",
@@ -63,7 +63,7 @@ const CONTENT: Record<"pt" | "en", { title: string; updated: string; intro: stri
             {
                 h: "Contact and complaints",
                 p: [
-                    "Controller: REPORLAR CONSTRUÇÕES, LDA — tax ID 516583409 — Rua Fialho de Almeida, n.º 14, 2.º Esq, 1070-129 Lisboa, Portugal. Email: grupo@tatierica.pt.",
+                    "Controller: REPORLAR CONSTRUÇÕES, LDA — tax ID 516583409 — Rua Fialho de Almeida, n.º 14, 2.º Esq, 1070-129 Lisboa, Portugal. Email: geral@inovaldurr.pt.",
                     "You may also complain to the Portuguese authority (CNPD — www.cnpd.pt). See also our Privacy Policy.",
                 ],
             },

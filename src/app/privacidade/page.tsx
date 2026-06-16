@@ -18,7 +18,7 @@ const CONTENT: Record<"pt" | "en", { title: string; updated: string; intro: stri
                 h: "1. Responsável pelo tratamento",
                 p: [
                     "REPORLAR CONSTRUÇÕES, LDA (marca Al Durr) — pessoa coletiva n.º 516583409 — Rua Fialho de Almeida, n.º 14, 2.º Esq, 1070-129 Lisboa, Portugal.",
-                    "Email: grupo@tatierica.pt · Telefone: +351 935 994 555.",
+                    "Email: geral@inovaldurr.pt · Telefone: +351 935 994 555.",
                 ],
             },
             {
@@ -77,7 +77,7 @@ const CONTENT: Record<"pt" | "en", { title: string; updated: string; intro: stri
             {
                 h: "8. Como exercer / Reclamações",
                 p: [
-                    "Para exercer os seus direitos ou apagar os seus dados, contacte grupo@tatierica.pt. Tem ainda o direito de apresentar reclamação à autoridade de controlo (CNPD — www.cnpd.pt).",
+                    "Para exercer os seus direitos ou apagar os seus dados, contacte geral@inovaldurr.pt. Tem ainda o direito de apresentar reclamação à autoridade de controlo (CNPD — www.cnpd.pt).",
                 ],
             },
             {
@@ -103,7 +103,7 @@ const CONTENT: Record<"pt" | "en", { title: string; updated: string; intro: stri
                 h: "1. Data controller",
                 p: [
                     "REPORLAR CONSTRUÇÕES, LDA (marca Al Durr) — pessoa coletiva n.º 516583409 — Rua Fialho de Almeida, n.º 14, 2.º Esq, 1070-129 Lisboa, Portugal.",
-                    "Email: grupo@tatierica.pt · Phone: +351 935 994 555.",
+                    "Email: geral@inovaldurr.pt · Phone: +351 935 994 555.",
                 ],
             },
             {
@@ -142,7 +142,7 @@ const CONTENT: Record<"pt" | "en", { title: string; updated: string; intro: stri
                 p: ["At any time you may exercise the rights to:"],
                 ul: ["Access, rectify and erase your data;", "Restrict and object to processing;", "Data portability;", "Withdraw consent, without affecting prior lawful processing."],
             },
-            { h: "8. How to exercise / Complaints", p: ["To exercise your rights or delete your data, contact grupo@tatierica.pt. You may also lodge a complaint with the Portuguese supervisory authority (CNPD — www.cnpd.pt)."] },
+            { h: "8. How to exercise / Complaints", p: ["To exercise your rights or delete your data, contact geral@inovaldurr.pt. You may also lodge a complaint with the Portuguese supervisory authority (CNPD — www.cnpd.pt)."] },
             { h: "9. Cookies", p: ["We use cookies essential to the website and, subject to consent, analytics cookies to improve the experience."] },
             { h: "10. Changes", p: ["We may update this policy. The current version is always available on this page."] },
         ],

@@ -112,7 +112,7 @@ export default function ContactosPage() {
                         <div className="space-y-8">
                             <div className="border-l-2 border-aldurr-honey/50 pl-6">
                                 <p className="text-xs text-aldurr-honey uppercase tracking-widest mb-1">Email</p>
-                                <a href="mailto:grupo@tatierica.pt" className="text-2xl text-aldurr-text-heading hover:text-aldurr-honey transition-colors">grupo@tatierica.pt</a>
+                                <a href="mailto:geral@inovaldurr.pt" className="text-2xl text-aldurr-text-heading hover:text-aldurr-honey transition-colors">geral@inovaldurr.pt</a>
                             </div>
                             <div className="border-l-2 border-aldurr-honey/50 pl-6">
                                 <p className="text-xs text-aldurr-honey uppercase tracking-widest mb-1">Telefone</p>

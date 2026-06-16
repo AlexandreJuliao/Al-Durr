@@ -38,7 +38,7 @@ export default function ContactFormSection({
                                 <div className="group">
                                     <h4 className="text-[10px] text-aldurr-honey uppercase tracking-[0.2em] font-bold mb-3">Contacto Direto</h4>
                                     <a href="tel:+351935994555" className="text-2xl font-light text-aldurr-text-body group-hover:text-aldurr-honey transition-colors block">+351 935 994 555</a>
-                                    <a href="mailto:grupo@tatierica.pt" className="text-aldurr-text-muted font-light text-sm mt-2 block hover:text-aldurr-honey transition-colors">grupo@tatierica.pt</a>
+                                    <a href="mailto:geral@inovaldurr.pt" className="text-aldurr-text-muted font-light text-sm mt-2 block hover:text-aldurr-honey transition-colors">geral@inovaldurr.pt</a>
                                 </div>
                             </div>
                         )}
