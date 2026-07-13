@@ -11,8 +11,14 @@ export default function LandServiceSection() {
             </div>
             <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center relative z-10">
                 <div className="relative h-[400px] w-full bg-aldurr-canvas/20 backdrop-blur-2xl border border-white/10 overflow-hidden shadow-2xl">
-                    {/* Abstract Map visual or Land visual */}
-                    <div className="absolute inset-0 opacity-10 bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')] bg-cover bg-center grayscale mix-blend-overlay" />
+                    {/* Abstract land grid — local CSS pattern (no external request) */}
+                    <div
+                        className="absolute inset-0 opacity-[0.12] pointer-events-none"
+                        style={{
+                            backgroundImage: `linear-gradient(rgba(198,156,109,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(198,156,109,0.25) 1px, transparent 1px)`,
+                            backgroundSize: "44px 44px",
+                        }}
+                    />
                     <div className="absolute inset-0 flex items-center justify-center">
                         <div className="w-16 h-16 rounded-full border border-aldurr-honey/50 flex items-center justify-center bg-aldurr-honey/10 backdrop-blur-md shadow-[0_0_30px_rgba(198,156,109,0.2)]">
                             <div className="w-2 h-2 bg-aldurr-honey rounded-full animate-ping" />

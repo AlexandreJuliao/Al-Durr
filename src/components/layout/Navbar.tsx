@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
@@ -9,40 +9,44 @@ import Magnetic from "@/components/ui/Magnetic";
 export default function Navbar() {
     const { t, locale, switchLanguage } = useLanguage();
     const [isVisible, setIsVisible] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+    // Keep scroll bookkeeping in refs so the listener subscribes ONCE and never
+    // tears itself down on every scroll tick. rAF-throttled; state only flips on change.
+    const lastScrollYRef = useRef(0);
+    const tickingRef = useRef(false);
+
     useEffect(() => {
-        const handleScroll = () => {
+        const update = () => {
+            tickingRef.current = false;
             const currentScrollY = window.scrollY;
+            const last = lastScrollYRef.current;
 
-            // Hide on scroll down (if > 100px), show on scroll up
-            if (currentScrollY > 100 && currentScrollY > lastScrollY) {
-                setIsVisible(false);
-            } else {
-                setIsVisible(true);
-            }
+            // Hide on scroll down (past 100px), show on scroll up.
+            setIsVisible(!(currentScrollY > 100 && currentScrollY > last));
+            // Glass effect once past 50px.
+            setIsScrolled(currentScrollY > 50);
 
-            // Glass effect intensity based on scroll position
-            if (currentScrollY > 50) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-
-            setLastScrollY(currentScrollY);
+            lastScrollYRef.current = currentScrollY;
         };
 
-        window.addEventListener("scroll", handleScroll);
+        const handleScroll = () => {
+            if (tickingRef.current) return;
+            tickingRef.current = true;
+            requestAnimationFrame(update);
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        update();
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [lastScrollY]);
+    }, []);
 
     return (
         <nav
             className={`fixed top-0 w-full z-50 px-6 md:px-12 py-4 md:py-6 flex justify-between items-center transition-all duration-500 transform 
-                ${isVisible ? "translate-y-0" : "-translate-y-full"} 
-                ${isScrolled ? "backdrop-blur-2xl bg-black/40 border-b border-white/[0.05] shadow-2xl shadow-black/40" : "bg-transparent"}
+                ${isVisible ? "translate-y-0" : "-translate-y-full"}
+                ${isScrolled ? "bg-black/80 md:bg-black/40 md:backdrop-blur-2xl border-b border-white/[0.05] shadow-2xl shadow-black/40" : "bg-transparent"}
             `}
         >
             {/* Logo */}

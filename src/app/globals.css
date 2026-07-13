@@ -73,3 +73,17 @@ html.lenis body {
   scrollbar-width: thin;
   scrollbar-color: rgba(184, 149, 106, 0.2) transparent;
 }
+
+/* Reduced-motion safety net: kill long/looping transitions & animations for users
+   who ask for it, without hiding any content. Scroll-scrubbed frames also freeze
+   to a single static frame (handled in ProcessSection). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

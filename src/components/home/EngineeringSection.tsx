@@ -76,12 +76,17 @@ export default function EngineeringSection() {
                             <span className="font-mono text-[9px] md:text-[10px] tracking-[0.3em] text-aldurr-text-body/40 uppercase">System_X-Ray_Scan_v4.0</span>
                         </div>
 
-                        {/* Scanning Line */}
-                        <motion.div
-                            animate={{ top: ["0%", "100%", "0%"] }}
-                            transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                            className="absolute left-0 right-0 h-[1px] bg-aldurr-honey/30 z-20 pointer-events-none shadow-[0_0_30px_rgba(198,156,109,0.4)]"
-                        />
+                        {/* Scanning Line — full-height layer translated on the GPU (no per-frame layout) */}
+                        <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden">
+                            <motion.div
+                                animate={{ y: ["0%", "100%", "0%"] }}
+                                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                                style={{ willChange: "transform" }}
+                                className="absolute inset-0"
+                            >
+                                <div className="absolute top-0 left-0 right-0 h-[1px] bg-aldurr-honey/30 shadow-[0_0_30px_rgba(198,156,109,0.4)]" />
+                            </motion.div>
+                        </div>
 
                         {/* Blueprint Image */}
                         <div className="relative w-full h-full md:h-[95%] p-4 md:p-0 flex items-center justify-center transition-transform duration-500">

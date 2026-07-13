@@ -15,18 +15,22 @@ export default function FloatingCTA() {
     useEffect(() => {
         if (isBackoffice) return;
 
+        let ticking = false;
+        const update = () => {
+            ticking = false;
+            // Show after scrolling 500px (setState is a no-op when the value is unchanged).
+            setIsVisible(window.scrollY > 500);
+        };
         const handleScroll = () => {
-            // Show after scrolling 500px
-            if (window.scrollY > 500) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
-            }
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(update);
         };
 
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        update();
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [isBackoffice]);
 
     if (isBackoffice) return null;
 

@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import { motion, useScroll, useTransform, useSpring, MotionValue } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -11,6 +11,13 @@ export default function ProcessSection() {
     const sectionRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const imagesRef = useRef<HTMLImageElement[]>([]);
+
+    // Perf refs: draw at most once per animation frame, and never redraw the same frame.
+    const rafRef = useRef<number | null>(null);
+    const targetFrameRef = useRef(0);
+    const lastDrawnRef = useRef(-1);
+    const isMobileRef = useRef(false);
+    const reducedMotionRef = useRef(false);
 
     const { scrollYProgress } = useScroll({
         target: sectionRef,
@@ -25,83 +32,108 @@ export default function ProcessSection() {
 
     // Animate frames smoothly across the entire scroll progress
     const frameIndex = useTransform(
-        smoothProgress, 
-        [0, 1.0], 
-        [0, 93], 
+        smoothProgress,
+        [0, 1.0],
+        [0, 93],
         { clamp: true }
     );
 
-    useEffect(() => {
-        const loadImages = async () => {
-            const loaded: HTMLImageElement[] = [];
-            for (let i = 0; i < FRAME_COUNT; i++) {
-                const img = new Image();
-                img.src = `${FRAME_PATH}${i.toString().padStart(3, "0")}.jpg`;
-                loaded.push(img);
-            }
-            imagesRef.current = loaded;
-
-            if (loaded[0]) {
-                loaded[0].onload = () => renderFrame(0);
-            }
-        };
-        loadImages();
-    }, []);
-
-    const renderFrame = (index: number) => {
+    // Pure draw: no layout reads (isMobile is cached), no per-frame ctx.filter
+    // (brightness/contrast lives in CSS on the canvas element and composites once).
+    const drawToCanvas = useCallback((index: number) => {
         const canvas = canvasRef.current;
-        const img = imagesRef.current[Math.floor(index)];
-        if (!canvas || !img) return;
+        const img = imagesRef.current[index];
+        if (!canvas || !img || !img.complete || img.naturalWidth === 0) return;
 
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        // Enhance visibility
-        ctx.filter = 'brightness(1.1) contrast(1.1)';
-
-        const isMobile = window.innerWidth < 768;
-        
+        const isMobile = isMobileRef.current;
         const hRatio = canvas.width / img.width;
         const vRatio = canvas.height / img.height;
 
-        // On mobile, Math.max (cover) scales it too high, cropping the sides heavily.
-        // Using hRatio * 1.35 fills the width much better while allowing us to see the whole animation bounds.
+        // On mobile, cover scales too high and crops the sides; hRatio * 1.35 fills the width.
         const ratio = isMobile ? (hRatio * 1.35) : Math.max(hRatio, vRatio);
-
-        // On desktop, shift right to avoid text. On mobile, move image lower down.
-        const centerShift_x = (canvas.width - img.width * ratio) / 2 + (isMobile ? 0 : canvas.width * 0.1); 
+        // Desktop: shift right to clear the text. Mobile: nudge down.
+        const centerShift_x = (canvas.width - img.width * ratio) / 2 + (isMobile ? 0 : canvas.width * 0.1);
         const centerShift_y = (canvas.height - img.height * ratio) / 2 + (isMobile ? canvas.height * 0.08 : 0);
 
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(
             img,
             0, 0, img.width, img.height,
             centerShift_x, centerShift_y, img.width * ratio, img.height * ratio
         );
-    };
+        lastDrawnRef.current = index;
+    }, []);
+
+    // Coalesce scroll-driven redraws into a single rAF; skip if the integer frame didn't change.
+    const scheduleDraw = useCallback(() => {
+        if (rafRef.current !== null) return;
+        rafRef.current = requestAnimationFrame(() => {
+            rafRef.current = null;
+            const idx = Math.min(FRAME_COUNT - 1, Math.max(0, Math.round(targetFrameRef.current)));
+            if (idx !== lastDrawnRef.current) drawToCanvas(idx);
+        });
+    }, [drawToCanvas]);
 
     useEffect(() => {
-        const unsubscribe = frameIndex.on("change", (latest) => {
-            renderFrame(latest);
-        });
+        const loaded: HTMLImageElement[] = [];
+        for (let i = 0; i < FRAME_COUNT; i++) {
+            const img = new Image();
+            img.decoding = "async";
+            img.src = `${FRAME_PATH}${i.toString().padStart(3, "0")}.jpg`;
+            // If the frame we currently want finishes decoding late, draw it in.
+            img.onload = () => {
+                if (Math.round(targetFrameRef.current) === i) {
+                    lastDrawnRef.current = -1;
+                    scheduleDraw();
+                }
+            };
+            loaded.push(img);
+        }
+        imagesRef.current = loaded;
+    }, [scheduleDraw]);
 
-        const handleResize = () => {
-            if (canvasRef.current) {
-                canvasRef.current.width = window.innerWidth;
-                canvasRef.current.height = window.innerHeight;
-                renderFrame(frameIndex.get());
-            }
+    useEffect(() => {
+        reducedMotionRef.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        const setupCanvas = () => {
+            const canvas = canvasRef.current;
+            if (!canvas) return;
+            isMobileRef.current = window.innerWidth < 768;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            lastDrawnRef.current = -1; // force a redraw at the new size
+            const idx = Math.min(FRAME_COUNT - 1, Math.max(0, Math.round(targetFrameRef.current)));
+            drawToCanvas(idx);
         };
+        setupCanvas();
 
+        let resizeRaf: number | null = null;
+        const handleResize = () => {
+            if (resizeRaf !== null) return;
+            resizeRaf = requestAnimationFrame(() => {
+                resizeRaf = null;
+                setupCanvas();
+            });
+        };
         window.addEventListener("resize", handleResize);
-        handleResize();
+
+        const unsubscribe = frameIndex.on("change", (latest) => {
+            targetFrameRef.current = latest;
+            // Reduced motion: keep a single static frame, no scroll scrubbing.
+            if (reducedMotionRef.current) return;
+            scheduleDraw();
+        });
 
         return () => {
             unsubscribe();
             window.removeEventListener("resize", handleResize);
+            if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+            if (resizeRaf !== null) cancelAnimationFrame(resizeRaf);
         };
-    }, [frameIndex]);
+    }, [frameIndex, drawToCanvas, scheduleDraw]);
 
     const steps = [
         {
@@ -143,7 +175,7 @@ export default function ProcessSection() {
             <div className="sticky top-0 h-[100dvh] w-full overflow-hidden flex items-center justify-center">
                 <canvas
                     ref={canvasRef}
-                    className="absolute inset-0 w-full h-full object-cover opacity-90 pointer-events-none"
+                    className="absolute inset-0 w-full h-full object-cover opacity-90 pointer-events-none [filter:brightness(1.1)_contrast(1.1)]"
                 />
 
                 {/* Responsive Gradients */}
