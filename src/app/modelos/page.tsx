@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { motion } from "framer-motion";
 
 const modelsFull = [
     {
@@ -100,13 +99,10 @@ export default function ModelosPage() {
             {/* Models List */}
             <div className="space-y-0 relative z-10">
                 {modelsFull.map((model, idx) => (
-                    <motion.section
+                    <section
                         key={model.id}
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="py-24 border-t border-white/5"
+                        id={model.id}
+                        className="scroll-mt-28 py-24 border-t border-white/5"
                     >
                         <div className="container mx-auto px-4">
                             <div className={`flex flex-col-reverse lg:flex-row gap-16 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
@@ -178,6 +174,7 @@ export default function ModelosPage() {
                                         src={model.image}
                                         alt={model.title}
                                         fill
+                                        sizes="(max-width: 1024px) 100vw, 50vw"
                                         className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -190,7 +187,7 @@ export default function ModelosPage() {
 
                             </div>
                         </div>
-                    </motion.section>
+                    </section>
                 ))}
             </div>
 

@@ -55,6 +55,7 @@ export default function Navbar() {
                     src="/logos/logo-white-horizontal.avif"
                     alt="Al Durr Logo"
                     fill
+                    sizes="(max-width: 768px) 160px, (max-width: 1024px) 208px, 256px"
                     className="object-contain"
                     priority
                 />
