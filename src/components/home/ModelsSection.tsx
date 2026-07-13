@@ -177,7 +177,7 @@ export default function ModelsSection() {
                                             <span className="text-[10px] text-aldurr-text-body/40 tracking-widest uppercase block mb-1">Desde</span>
                                             <span className="text-2xl font-light text-aldurr-honey">€{model.price}</span>
                                         </div>
-                                        <Link href={`/modelos#${model.id === 't2' ? 't2-family' : model.id}`}>
+                                        <Link scroll={false} href={`/modelos#${model.id === 't2' ? 't2-family' : model.id}`}>
                                             <button className="px-6 py-3 bg-white/5 border border-white/20 text-aldurr-text-body text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-gold-metallic hover:text-aldurr-void hover:border-transparent transition-all duration-500">
                                                 Ver Detalhes
                                             </button>

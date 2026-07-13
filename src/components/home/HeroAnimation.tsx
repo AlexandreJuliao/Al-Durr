@@ -114,7 +114,7 @@ export default function HeroAnimation() {
                                     ))}
                                 </div>
 
-                                    <Link href="/contactos#contact-form" className="relative mt-4 group w-full block">
+                                    <Link scroll={false} href="/contactos#contact-form" className="relative mt-4 group w-full block">
                                         <div className="absolute -inset-1 bg-gradient-to-r from-aldurr-honey to-aldurr-honey-light rounded-sm blur opacity-10 group-hover:opacity-30 transition duration-700" />
                                         <button className="relative flex items-center justify-between pl-6 md:pl-8 pr-2 py-2 md:py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-sm hover:bg-white/10 transition-all duration-300 group w-full overflow-hidden">
                                             <span className="flex flex-col items-start mr-2 md:mr-4 text-left">

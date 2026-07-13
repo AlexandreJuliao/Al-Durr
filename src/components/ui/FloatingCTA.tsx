@@ -43,7 +43,7 @@ export default function FloatingCTA() {
                     exit={{ opacity: 0, scale: 0.8, y: 20 }}
                     className="fixed bottom-8 right-8 z-[100]"
                 >
-                    <Link href="/contactos#contact-form">
+                    <Link scroll={false} href="/contactos#contact-form">
                         <button 
                             onClick={() => fp.event("Contact", { content_name: "Floating CTA Pedir Orçamento" })}
                             className="group relative flex items-center gap-3 px-6 py-4 bg-gold-metallic text-aldurr-canvas rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_rgba(198,156,109,0.4)] transition-all duration-500 overflow-hidden"

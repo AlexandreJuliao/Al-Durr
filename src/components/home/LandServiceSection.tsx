@@ -53,7 +53,7 @@ export default function LandServiceSection() {
                         </div>
                     </div>
 
-                    <Link href="/contactos#contact-form">
+                    <Link scroll={false} href="/contactos#contact-form">
                         <button className="px-10 py-4 border border-aldurr-honey/40 bg-aldurr-honey/10 text-aldurr-text-body text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-aldurr-honey hover:text-aldurr-void hover:shadow-[0_0_20px_rgba(198,156,109,0.4)] transition-all duration-500 rounded-sm">
                             Pedir Lista
                         </button>

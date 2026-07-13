@@ -29,7 +29,7 @@ export default function Footer() {
                         </p>
 
                         <Magnetic>
-                            <Link href="/contactos#contact-form">
+                            <Link scroll={false} href="/contactos#contact-form">
                                 <button className="px-12 py-5 bg-gold-metallic text-aldurr-canvas text-xs font-bold tracking-[0.25em] uppercase rounded-full hover:brightness-110 transition-all duration-500 shadow-2xl hover:shadow-[0_0_30px_rgba(45,90,66,0.3)] hover:scale-105 active:scale-95">
                                     Agendar Reunião
                                 </button>
