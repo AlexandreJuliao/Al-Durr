@@ -73,10 +73,10 @@ export default function HeroAnimation() {
                                 <div className="flex flex-row items-center justify-between gap-3 lg:gap-8">
                                     <div className="flex-1 group flex flex-col cursor-default">
                                         <div className="flex items-baseline gap-1.5 lg:gap-2 mb-0.5 lg:mb-2">
-                                            <span className="text-[clamp(2.25rem,10vw,3rem)] md:text-5xl lg:text-7xl font-bold bg-gold-metallic bg-clip-text text-transparent drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)] tracking-tighter leading-none">
+                                            <span className="text-[clamp(2.25rem,10vw,3rem)] md:text-[2.5rem] lg:text-6xl font-bold bg-gold-metallic bg-clip-text text-transparent drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)] tracking-tighter leading-none">
                                                 6
                                             </span>
-                                            <span className="text-xs md:text-sm lg:text-xl text-white/50 font-light tracking-tight whitespace-nowrap shrink-0">Meses</span>
+                                            <span className="text-xs md:text-xs lg:text-base text-white/50 font-light tracking-tight whitespace-nowrap shrink-0">Meses</span>
                                         </div>
                                         <span className="text-[9px] md:text-[8px] lg:text-[10px] font-bold tracking-[0.1em] md:tracking-[0.2em] lg:tracking-[0.3em] text-aldurr-honey uppercase whitespace-nowrap">
                                             Entrega Total
@@ -88,10 +88,10 @@ export default function HeroAnimation() {
 
                                     <div className="flex-1 group flex flex-col items-end cursor-default">
                                         <div className="flex items-baseline gap-1 mb-0.5 lg:mb-2">
-                                            <span className="text-[clamp(2.25rem,10vw,3rem)] md:text-5xl lg:text-7xl font-bold bg-gold-metallic bg-clip-text text-transparent drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)] tracking-tighter leading-none">
+                                            <span className="text-[clamp(2.25rem,10vw,3rem)] md:text-[2.5rem] lg:text-6xl font-bold bg-gold-metallic bg-clip-text text-transparent drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)] tracking-tighter leading-none">
                                                 1.300
                                             </span>
-                                            <span className="text-xs md:text-sm lg:text-xl text-white/50 font-light tracking-tight whitespace-nowrap shrink-0">€/m²</span>
+                                            <span className="text-xs md:text-xs lg:text-base text-white/50 font-light tracking-tight whitespace-nowrap shrink-0">€/m²</span>
                                         </div>
                                         <span className="text-[9px] md:text-[8px] lg:text-[10px] font-bold tracking-[0.1em] md:tracking-[0.2em] lg:tracking-[0.3em] text-aldurr-honey uppercase whitespace-nowrap">
                                             Desde · Chave na Mão
