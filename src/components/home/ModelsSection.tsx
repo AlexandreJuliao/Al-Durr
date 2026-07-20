@@ -11,8 +11,8 @@ const models = [
         id: "t1",
         title: "T1 STUDIO",
         subtitle: "O Refúgio Perfeito",
-        price: "149.900",
-        area: "45m²",
+        price: "80.000",
+        area: "62m²",
         desc: "Ideal para turismo rural ou casa de férias compacta. Design otimizado para conforto máximo em área reduzida.",
         features: ["1 Quarto Mezzanine", "1 WC Completo", "Sala + Kitchenette", "Deck Frontal"],
         image: "/t1-model.avif"
@@ -21,8 +21,8 @@ const models = [
         id: "t2",
         title: "T2 FAMILY",
         subtitle: "Vida em Equilíbrio",
-        price: "189.900",
-        area: "75m²",
+        price: "150.000",
+        area: "115m²",
         desc: "A escolha equilibrada para pequenas famílias. Amplas áreas sociais e privacidade nos quartos.",
         features: ["2 Quartos", "1 WC Premium", "Sala Panorâmica", "Área Técnica"],
         image: "/t2-model.avif"
@@ -32,7 +32,7 @@ const models = [
         title: "T-MULTI",
         subtitle: "Sem Limites",
         price: "Sob Consulta",
-        area: "75m²+",
+        area: "115m²+",
         desc: "O nosso sistema de expansão de precisão permite customizar o comprimento da habitação de forma contínua. Crie a sua mansão A-Frame.",
         features: ["Layout Personalizado", "Múltiplas Suites", "Sauna / Ginásio", "Acabamentos Elite"],
         image: "/t-multi-model.avif"
@@ -174,8 +174,12 @@ export default function ModelsSection() {
                                     </ul>
                                     <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
                                         <div>
-                                            <span className="text-[10px] text-aldurr-text-body/40 tracking-widest uppercase block mb-1">Desde</span>
-                                            <span className="text-2xl font-light text-aldurr-honey">€{model.price}</span>
+                                            <span className="text-[10px] text-aldurr-text-body/40 tracking-widest uppercase block mb-1">
+                                                {model.price === "Sob Consulta" ? "Preço" : "Desde"}
+                                            </span>
+                                            <span className="text-2xl font-light text-aldurr-honey">
+                                                {model.price === "Sob Consulta" ? model.price : `€${model.price}`}
+                                            </span>
                                         </div>
                                         <Link scroll={false} href={`/modelos#${model.id === 't2' ? 't2-family' : model.id}`}>
                                             <button className="px-6 py-3 bg-white/5 border border-white/20 text-aldurr-text-body text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-gold-metallic hover:text-aldurr-void hover:border-transparent transition-all duration-500">

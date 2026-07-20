@@ -89,12 +89,12 @@ export default function HeroAnimation() {
                                     <div className="flex-1 group flex flex-col items-end cursor-default">
                                         <div className="flex items-baseline gap-1 mb-0.5 lg:mb-2">
                                             <span className="text-6xl md:text-5xl lg:text-7xl font-bold bg-gold-metallic bg-clip-text text-transparent drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)] tracking-tighter leading-none">
-                                                149K
+                                                1.300
                                             </span>
-                                            <span className="text-sm md:text-sm lg:text-xl text-white/50 font-light tracking-tight">€</span>
+                                            <span className="text-sm md:text-sm lg:text-xl text-white/50 font-light tracking-tight">€/m²</span>
                                         </div>
                                         <span className="text-[10px] md:text-[8px] lg:text-[10px] font-bold tracking-[0.2em] lg:tracking-[0.3em] text-aldurr-honey uppercase whitespace-nowrap">
-                                            Investimento
+                                            Desde · Chave na Mão
                                         </span>
                                     </div>
                                 </div>

@@ -9,11 +9,11 @@ const modelsFull = [
         id: "t1",
         title: "T1 STUDIO",
         subtitle: "Afinado para a Natureza",
-        price: "149.900",
-        area: "45m²",
+        price: "80.000",
+        area: "62m²",
         desc: "O T1 Studio é a expressão mínima e perfeita do conceito A-Frame. Desenhado para maximizar a ligação com o exterior, é a escolha ideal para retiros de fim-de-semana ou unidades de turismo rural de alto rendimento.",
         specs: [
-            { label: "Área Bruta", value: "45 m²" },
+            { label: "Área Bruta", value: "62 m²" },
             { label: "Pé Direito", value: "5.5 m" },
             { label: "Quartos", value: "1 (Mezzanine)" },
             { label: "WC", value: "1 Completo" }
@@ -30,18 +30,18 @@ const modelsFull = [
         id: "t2-family",
         title: "T2 FAMILY",
         subtitle: "Expansão de Alta Precisão",
-        price: "199.900",
-        area: "65m²",
-        desc: "Com 35m² no piso inferior e um espaçoso mezzanine de 30m², ideal para pequenas famílias (incluindo berçário) ou refúgios com máximo conforto e integração fluida com a natureza.",
+        price: "150.000",
+        area: "115m²",
+        desc: "Com 75m² no piso inferior e um espaçoso mezzanine de 40m², ideal para pequenas famílias (incluindo berçário) ou refúgios com máximo conforto e integração fluida com a natureza.",
         image: "/t2-model-new.avif",
         specs: [
-            { label: "Área Bruta", value: "65 m²" },
+            { label: "Área Bruta", value: "115 m²" },
             { label: "Pé Direito", value: "6.0 m" },
             { label: "Quartos", value: "1 Casal + Berçário/Solteiro" },
             { label: "WC", value: "1 Premium" }
         ],
         features: [
-            "Área Total: 65m² (35m² + 30m² mezzanine)",
+            "Área Total: 115m² (75m² + 40m² mezzanine)",
             "1 Quarto Casal + Berçário/Quarto Aberto + 1 WC + 10m² Varanda",
             "Suite principal no piso térreo",
             "Quarto secundário em Mezzanine",
@@ -54,7 +54,7 @@ const modelsFull = [
         title: "T-MULTI",
         subtitle: "Sem Limites Arquitetónicos",
         price: "Sob Consulta",
-        area: "∞",
+        area: "115m²+",
         desc: "O sistema construtivo Al Durr permite a extrusão do módulo base para comprimentos infinitos. Crie uma mansão A-Frame com múltiplas suites, ginásio, spa ou espaços de co-living.",
         specs: [
             { label: "Área Bruta", value: "Personalizável" },
@@ -156,9 +156,13 @@ export default function ModelosPage() {
                                     </ul>
 
                                     <div className="pt-4">
-                                        <span className="block text-xs text-aldurr-honey/40 uppercase tracking-widest mb-2">Preço chave na mão desde</span>
+                                        <span className="block text-xs text-aldurr-honey/40 uppercase tracking-widest mb-2">
+                                            {model.id === 'custom' ? 'Preço' : 'Preço chave na mão desde'}
+                                        </span>
                                         <div className="flex items-baseline gap-4">
-                                            <span className="text-3xl font-bold text-aldurr-honey">€{model.price}</span>
+                                            <span className="text-3xl font-bold text-aldurr-honey">
+                                                {model.id === 'custom' ? model.price : `€${model.price}`}
+                                            </span>
                                             {model.id !== 'custom' && <span className="text-xs text-aldurr-text-body/30 font-light">+ IVA</span>}
                                         </div>
                                     </div>
@@ -237,9 +241,9 @@ export default function ModelosPage() {
                             </thead>
                             <tbody>
                                 {[
-                                    { label: "Área de Implantação", values: ["45 m²", "75 m²", "Custom"] },
-                                    { label: "Piso 0 (Social)", values: ["30 m²", "55 m²", "Variável"] },
-                                    { label: "Mezzanine (Privado)", values: ["15 m²", "20 m²", "Personalizável"] },
+                                    { label: "Área Bruta Total", values: ["62 m²", "115 m²", "115 m²+"] },
+                                    { label: "Piso 0 (Social)", values: ["40 m²", "75 m²", "Variável"] },
+                                    { label: "Mezzanine (Privado)", values: ["22 m²", "40 m²", "Personalizável"] },
                                     { label: "Ambientes", values: ["1 Quarto, 1 WC", "2 Quartos, 1 WC", "Escalável"] },
                                     { label: "Pé Direito Máximo", values: ["5.5m", "6.0m", "Sob Medida"] },
                                     { label: "Isolamento Térmico", values: ["Classe A+", "Classe A+", "Classe A++"] },
