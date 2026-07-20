@@ -73,12 +73,12 @@ export default function HeroAnimation() {
                                 <div className="flex flex-row items-center justify-between gap-3 lg:gap-8">
                                     <div className="flex-1 group flex flex-col cursor-default">
                                         <div className="flex items-baseline gap-1.5 lg:gap-2 mb-0.5 lg:mb-2">
-                                            <span className="text-6xl md:text-5xl lg:text-7xl font-bold bg-gold-metallic bg-clip-text text-transparent drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)] tracking-tighter leading-none">
+                                            <span className="text-[clamp(2.25rem,10vw,3rem)] md:text-5xl lg:text-7xl font-bold bg-gold-metallic bg-clip-text text-transparent drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)] tracking-tighter leading-none">
                                                 6
                                             </span>
-                                            <span className="text-sm md:text-sm lg:text-xl text-white/50 font-light tracking-tight">Meses</span>
+                                            <span className="text-xs md:text-sm lg:text-xl text-white/50 font-light tracking-tight whitespace-nowrap shrink-0">Meses</span>
                                         </div>
-                                        <span className="text-[10px] md:text-[8px] lg:text-[10px] font-bold tracking-[0.2em] lg:tracking-[0.3em] text-aldurr-honey uppercase whitespace-nowrap">
+                                        <span className="text-[9px] md:text-[8px] lg:text-[10px] font-bold tracking-[0.1em] md:tracking-[0.2em] lg:tracking-[0.3em] text-aldurr-honey uppercase whitespace-nowrap">
                                             Entrega Total
                                         </span>
                                     </div>
@@ -88,12 +88,12 @@ export default function HeroAnimation() {
 
                                     <div className="flex-1 group flex flex-col items-end cursor-default">
                                         <div className="flex items-baseline gap-1 mb-0.5 lg:mb-2">
-                                            <span className="text-6xl md:text-5xl lg:text-7xl font-bold bg-gold-metallic bg-clip-text text-transparent drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)] tracking-tighter leading-none">
+                                            <span className="text-[clamp(2.25rem,10vw,3rem)] md:text-5xl lg:text-7xl font-bold bg-gold-metallic bg-clip-text text-transparent drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)] tracking-tighter leading-none">
                                                 1.300
                                             </span>
-                                            <span className="text-sm md:text-sm lg:text-xl text-white/50 font-light tracking-tight">€/m²</span>
+                                            <span className="text-xs md:text-sm lg:text-xl text-white/50 font-light tracking-tight whitespace-nowrap shrink-0">€/m²</span>
                                         </div>
-                                        <span className="text-[10px] md:text-[8px] lg:text-[10px] font-bold tracking-[0.2em] lg:tracking-[0.3em] text-aldurr-honey uppercase whitespace-nowrap">
+                                        <span className="text-[9px] md:text-[8px] lg:text-[10px] font-bold tracking-[0.1em] md:tracking-[0.2em] lg:tracking-[0.3em] text-aldurr-honey uppercase whitespace-nowrap">
                                             Desde · Chave na Mão
                                         </span>
                                     </div>
@@ -116,12 +116,12 @@ export default function HeroAnimation() {
 
                                     <Link scroll={false} href="/contactos#contact-form" className="relative mt-4 group w-full block">
                                         <div className="absolute -inset-1 bg-gradient-to-r from-aldurr-honey to-aldurr-honey-light rounded-sm blur opacity-10 group-hover:opacity-30 transition duration-700" />
-                                        <button className="relative flex items-center justify-between pl-6 md:pl-8 pr-2 py-2 md:py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-sm hover:bg-white/10 transition-all duration-300 group w-full overflow-hidden">
-                                            <span className="flex flex-col items-start mr-2 md:mr-4 text-left">
-                                                <span className="text-[10px] md:text-[9px] text-white/50 uppercase tracking-[0.2em] mb-0.5 font-bold">Inicie o seu Legado</span>
-                                                <span className="text-xs md:text-sm text-white font-medium tracking-widest whitespace-nowrap uppercase">Solicitar Estudo Exclusivo</span>
+                                        <button className="relative flex items-center justify-between gap-2 pl-4 sm:pl-6 md:pl-8 pr-2 py-2 md:py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-sm hover:bg-white/10 transition-all duration-300 group w-full overflow-hidden">
+                                            <span className="flex flex-col items-start min-w-0 text-left">
+                                                <span className="text-[9px] sm:text-[10px] md:text-[9px] text-white/50 uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-0.5 font-bold whitespace-nowrap">Inicie o seu Legado</span>
+                                                <span className="text-[clamp(0.68rem,3vw,0.875rem)] text-white font-medium tracking-wide sm:tracking-widest whitespace-nowrap uppercase">Solicitar Estudo Exclusivo</span>
                                             </span>
-                                            <span className="flex-shrink-0 w-10 h-10 md:w-11 md:h-11 bg-gold-metallic text-aldurr-void rounded-[2px] flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-xl self-center">
+                                            <span className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-gold-metallic text-aldurr-void rounded-[2px] flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-xl self-center">
                                                 <svg className="w-3 h-3 md:w-3.5 md:h-3.5" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M1 13L13 1M13 1H5M13 1V9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                                                 </svg>
