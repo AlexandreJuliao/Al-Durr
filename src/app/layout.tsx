@@ -5,6 +5,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import FloatingCTA from "@/components/ui/FloatingCTA";
+import { POSTHOG_SCRIPT } from "@/lib/posthog";
 
 const geistSans = Inter({
   subsets: ["latin"],
@@ -89,6 +90,10 @@ export default function RootLayout({
                 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             })(window, document, "clarity", "script", "whsf4l0yd3");
           `}
+        </Script>
+        {/* PostHog — o que o Pardus OS lê. Ver src/lib/posthog.ts. */}
+        <Script id="posthog" strategy="afterInteractive">
+          {POSTHOG_SCRIPT}
         </Script>
         <LanguageProvider>
           <SmoothScrolling>

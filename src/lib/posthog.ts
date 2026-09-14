@@ -1,0 +1,39 @@
+// ── POSTHOG (comportamento no site) ─────────────────────────────────────────
+// É o que o Pardus OS lê em Clientes → Al Durr → Website: vistas, páginas mais
+// vistas, rage clicks e dead clicks. Projeto PostHog 274114, na organização
+// própria da Al Durr. Entrou a 14/09/2026 para substituir o Microsoft Clarity,
+// que sai do layout depois de o PostHog mostrar dados.
+//
+// Tudo aqui é público por natureza (vai no HTML), como o id do Pixel.
+
+/** Chave pública do projeto PostHog da Al Durr. */
+const POSTHOG_KEY = "phc_o7FjEQrE9Q42Vc9Myj8FvZayovVeF7xEANcWk3gK9Nb6";
+
+/**
+ * - `cookieless_mode: "always"`: nada fica guardado no browser (nem cookie, nem
+ *   localStorage). O site não tem aviso de consentimento; o visitante é contado
+ *   por um hash feito no servidor do PostHog, e o projeto tem o modo sem
+ *   cookies ligado para isso. Preço: a mesma pessoa em dias diferentes conta
+ *   como visitante novo.
+ * - `capture_pageview: "history_change"`: o site muda de página sem recarregar
+ *   (App Router); sem isto só a primeira página de cada visita contava.
+ * - `capture_dead_clicks: true`: o projeto nasce com isto desligado.
+ */
+const POSTHOG_CONFIG = {
+  api_host: "https://eu.i.posthog.com",
+  cookieless_mode: "always",
+  person_profiles: "identified_only",
+  capture_pageview: "history_change",
+  capture_pageleave: true,
+  capture_dead_clicks: true,
+};
+
+// O carregador oficial do PostHog, sem alterações (repositório do PostHog,
+// docs/onboarding/product-analytics/_snippets/js-snippet-builder.ts). Carregar
+// só o array.js e chamar posthog.init a seguir NÃO funciona: dá
+// "posthog.init is not a function" e não regista nada.
+const CARREGADOR = `!function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="init capture register register_once register_for_session unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group identify setPersonProperties setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups onFeatureFlags addFeatureFlagsHandler onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);`;
+
+/** O conteúdo do <Script id="posthog"> no layout. */
+export const POSTHOG_SCRIPT = `${CARREGADOR}
+posthog.init('${POSTHOG_KEY}', ${JSON.stringify(POSTHOG_CONFIG)});`;
