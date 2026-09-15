@@ -70,7 +70,6 @@ function HashScroll() {
 }
 
 function SmoothScrolling({ children }: { children: React.ReactNode }) {
-    const pathname = usePathname();
     const [reducedMotion, setReducedMotion] = useState(false);
 
     // Respect the OS "reduce motion" setting: fall back to native scrolling.
@@ -82,11 +81,8 @@ function SmoothScrolling({ children }: { children: React.ReactNode }) {
         return () => mq.removeEventListener('change', onChange);
     }, []);
 
-    // Disable Lenis smooth scroll for the backoffice dashboard (avoids height locking)
-    // and for reduced-motion users.
-    const isBackoffice = pathname?.startsWith('/backoffice');
-
-    if (isBackoffice || reducedMotion) {
+    // Disable Lenis smooth scroll for reduced-motion users.
+    if (reducedMotion) {
         return <>{children}</>;
     }
 
