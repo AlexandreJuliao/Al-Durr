@@ -1,8 +1,9 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useId, useRef, useState } from "react";
 import * as fp from "@/lib/fpixel";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { HONEYPOT_FIELD, LEAD_MAX_LENGTH, isValidPhone } from "@/lib/lead";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 type ValidatedField = "phone" | "model" | "landStatus";
@@ -18,11 +19,6 @@ const EMPTY_FORM = {
     model: "",
     message: ""
 };
-
-// Validação leve: só dígitos, espaços, +, (, ) e -, com pelo menos 9 dígitos.
-// O valor segue tal como foi escrito; o n8n normaliza o número.
-const isValidPhone = (value: string) =>
-    /^[\d\s()+-]+$/.test(value.trim()) && (value.match(/\d/g)?.length ?? 0) >= 9;
 
 const ERROR_MESSAGES: Record<ValidatedField, string> = {
     phone: "Indique um telefone válido, com pelo menos 9 dígitos.",
@@ -44,6 +40,8 @@ export default function ContactForm() {
     const [status, setStatus] = useState<FormStatus>("idle");
     const [consent, setConsent] = useState(false);
     const phoneRef = useRef<HTMLInputElement>(null);
+    const honeypotRef = useRef<HTMLInputElement>(null);
+    const honeypotId = useId();
     const router = useRouter();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -76,15 +74,11 @@ export default function ContactForm() {
         setStatus("loading");
 
         try {
-            const webhookUrl = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
-            if (!webhookUrl || webhookUrl.includes("SEU-N8N-URL")) {
-                throw new Error("Webhook URL não configurada");
-            }
-
-            const res = await fetch(webhookUrl, {
+            // Vai para o servidor do site, que valida e passa ao n8n.
+            const res = await fetch("/api/lead", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData)
+                body: JSON.stringify({ ...formData, [HONEYPOT_FIELD]: honeypotRef.current?.value ?? "" })
             });
 
             if (!res.ok) throw new Error("Erro ao enviar");
@@ -119,6 +113,7 @@ export default function ContactForm() {
                     <input
                         type="text"
                         name="name"
+                        maxLength={LEAD_MAX_LENGTH.name}
                         value={formData.name}
                         onChange={handleChange}
                         required
@@ -134,6 +129,7 @@ export default function ContactForm() {
                         name="phone"
                         autoComplete="tel"
                         inputMode="tel"
+                        maxLength={LEAD_MAX_LENGTH.phone}
                         value={formData.phone}
                         onChange={handleChange}
                         onBlur={handlePhoneBlur}
@@ -155,6 +151,7 @@ export default function ContactForm() {
                 <input
                     type="email"
                     name="email"
+                    maxLength={LEAD_MAX_LENGTH.email}
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -190,6 +187,7 @@ export default function ContactForm() {
                     <input
                         type="text"
                         name="location"
+                        maxLength={LEAD_MAX_LENGTH.location}
                         value={formData.location}
                         onChange={handleChange}
                         className="w-full bg-white/[0.03] border border-white/10 p-4 text-white focus:border-aldurr-honey outline-none transition-colors rounded-sm"
@@ -240,6 +238,7 @@ export default function ContactForm() {
                 <label className="text-xs uppercase tracking-widest text-white/50">Mensagem (Opcional)</label>
                 <textarea
                     name="message"
+                    maxLength={LEAD_MAX_LENGTH.message}
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full bg-white/[0.03] border border-white/10 p-4 text-white focus:border-aldurr-honey outline-none transition-colors h-32 rounded-sm"
@@ -278,6 +277,20 @@ export default function ContactForm() {
             >
                 {status === "loading" ? "A enviar..." : "Enviar Pedido"}
             </button>
+            {/* Armadilha para robôs: invisível e fora do Tab, quem a preenche não é gente.
+                Fica no fim para não alterar o espaçamento entre campos. */}
+            <div aria-hidden="true" className="sr-only">
+                <label htmlFor={honeypotId}>Não preencha este campo</label>
+                <input
+                    ref={honeypotRef}
+                    type="text"
+                    id={honeypotId}
+                    name={HONEYPOT_FIELD}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    defaultValue=""
+                />
+            </div>
         </form>
     );
 }
