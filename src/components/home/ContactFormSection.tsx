@@ -33,7 +33,7 @@ export default function ContactFormSection({
                                 <div className="group">
                                     <h4 className="text-[10px] text-aldurr-honey uppercase tracking-[0.2em] font-bold mb-3">Escritório</h4>
                                     <p className="text-2xl font-light text-aldurr-text-body group-hover:text-aldurr-honey transition-colors">Torres Vedras, Portugal</p>
-                                    <p className="text-aldurr-text-muted font-light text-sm mt-2">R. Nossa Sra. da Graça Póvoa de Penafirme 119</p>
+                                    <p className="text-aldurr-text-muted font-light text-sm mt-2">R. Nossa Sra. da Graça Póvoa de Penafirme 109</p>
                                 </div>
                                 <div className="group">
                                     <h4 className="text-[10px] text-aldurr-honey uppercase tracking-[0.2em] font-bold mb-3">Contacto Direto</h4>
