@@ -120,7 +120,7 @@ export default function ContactosPage() {
                             </div>
                             <div className="border-l-2 border-aldurr-honey/50 pl-6">
                                 <p className="text-xs text-aldurr-honey uppercase tracking-widest mb-1">Sede</p>
-                                <p className="text-xl text-aldurr-text-heading">R. Nossa Sra. da Graça<br />Póvoa de Penafirme 119<br />2560-046 Torres Vedras</p>
+                                <p className="text-xl text-aldurr-text-heading">R. Nossa Sra. da Graça<br />Póvoa de Penafirme 109<br />2560-046 Torres Vedras</p>
                             </div>
                         </div>
                     </div>
