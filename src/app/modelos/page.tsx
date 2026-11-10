@@ -24,7 +24,7 @@ const modelsFull = [
             "Deck frontal em madeira maciça (15m²)",
             "Fachada envidraçada termo-acústica"
         ],
-        image: "/t1-model.avif"
+        image: "/t1-model-v2.avif"
     },
     {
         id: "t2-family",
@@ -33,7 +33,7 @@ const modelsFull = [
         price: "150.000",
         area: "115m²",
         desc: "Com 75m² no piso inferior e um espaçoso mezzanine de 40m², ideal para pequenas famílias (incluindo berçário) ou refúgios com máximo conforto e integração fluida com a natureza.",
-        image: "/t2-model-new.avif",
+        image: "/t2-model-v2.avif",
         specs: [
             { label: "Área Bruta", value: "115 m²" },
             { label: "Pé Direito", value: "6.0 m" },
@@ -68,7 +68,7 @@ const modelsFull = [
             "Acabamentos em mármore e madeiras exóticas",
             "Soluções Off-Grid disponíveis"
         ],
-        image: "/t-multi-model.avif"
+        image: "/t-multi-model-v2.avif"
     }
 ];
 

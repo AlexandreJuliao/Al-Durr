@@ -15,7 +15,7 @@ const models = [
         area: "62m²",
         desc: "Ideal para turismo rural ou casa de férias compacta. Design otimizado para conforto máximo em área reduzida.",
         features: ["1 Quarto Mezzanine", "1 WC Completo", "Sala + Kitchenette", "Deck Frontal"],
-        image: "/t1-model.avif"
+        image: "/t1-model-v2.avif"
     },
     {
         id: "t2",
@@ -25,7 +25,7 @@ const models = [
         area: "115m²",
         desc: "A escolha equilibrada para pequenas famílias. Amplas áreas sociais e privacidade nos quartos.",
         features: ["2 Quartos", "1 WC Premium", "Sala Panorâmica", "Área Técnica"],
-        image: "/t2-model.avif"
+        image: "/t2-model-v2.avif"
     },
     {
         id: "custom",
@@ -35,7 +35,7 @@ const models = [
         area: "115m²+",
         desc: "O nosso sistema de expansão de precisão permite customizar o comprimento da habitação de forma contínua. Crie a sua mansão A-Frame.",
         features: ["Layout Personalizado", "Múltiplas Suites", "Sauna / Ginásio", "Acabamentos Elite"],
-        image: "/t-multi-model.avif"
+        image: "/t-multi-model-v2.avif"
     }
 ];
 

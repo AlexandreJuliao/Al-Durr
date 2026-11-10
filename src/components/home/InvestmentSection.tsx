@@ -99,7 +99,7 @@ export default function InvestmentSection() {
                                 style={{ clipPath: 'polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%)' }}
                             >
                                 <Image
-                                    src="/investment-aframe-night-new.avif"
+                                    src="/investment-aframe-night-v2.avif"
                                     alt="A-Frame property investment at night"
                                     fill
                                     sizes="(max-width: 768px) 100vw, 40vw"
