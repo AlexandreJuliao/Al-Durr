@@ -1,4 +1,6 @@
-// Recebe o formulário de contacto e passa-o ao n8n ("Al Durr — Leads Website").
+// Recebe o formulário de contacto e passa-o ao CRM: ao backoffice do grupo
+// (`LEADS_URL` + `LEADS_SECRET`) ou, enquanto essas variáveis não existirem,
+// ao n8n ("Al Durr — Leads Website"). A troca é só pôr as duas variáveis.
 //
 // Antes o browser falava direto com o webhook do n8n, cujo endereço ficava
 // público no JavaScript do site. Agora o endereço só existe no servidor, e
@@ -52,16 +54,16 @@ export async function POST(request: Request) {
     const lead = parseLead(body);
     if (!lead) return fail(400, "Verifique os dados do formulário.");
 
-    // N8N_WEBHOOK_URL é a variável certa (só servidor). A pública fica como
-    // recurso enquanto a nova não estiver criada na Vercel.
-    const webhookUrl = process.env.N8N_WEBHOOK_URL || process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
+    // LEADS_URL (o backoffice) primeiro; o n8n fica como recurso até à troca.
+    // Variáveis só de servidor; a pública do n8n é o recurso mais antigo.
+    const webhookUrl = process.env.LEADS_URL || process.env.N8N_WEBHOOK_URL || process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
     if (!webhookUrl || webhookUrl.includes("SEU-N8N-URL")) {
-        report(new Error("Webhook do n8n não configurado"), "configuracao");
+        report(new Error("Endereço das leads não configurado"), "configuracao");
         return fail(500);
     }
 
     const headers: Record<string, string> = { "Content-Type": "application/json" };
-    const secret = process.env.N8N_WEBHOOK_SECRET;
+    const secret = process.env.LEADS_URL ? process.env.LEADS_SECRET : process.env.N8N_WEBHOOK_SECRET;
     if (secret) headers["x-aldurr-secret"] = secret;
 
     try {
@@ -73,14 +75,14 @@ export async function POST(request: Request) {
             cache: "no-store"
         });
         if (!res.ok) {
-            report(new Error(`n8n respondeu ${res.status}`), "n8n");
+            report(new Error(`O CRM respondeu ${res.status}`), "n8n");
             return fail(502);
         }
     } catch (error) {
         // Só o nome e a mensagem do erro, sem o endereço do webhook (é segredo).
         const name = error instanceof Error ? error.name : "Error";
         const message = (error instanceof Error ? error.message : String(error)).split(webhookUrl).join("<webhook>");
-        report(new Error(`Falha a contactar o n8n (${name}): ${message}`), "n8n");
+        report(new Error(`Falha a contactar o CRM (${name}): ${message}`), "n8n");
         return fail(502);
     }
 
