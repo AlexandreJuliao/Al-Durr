@@ -127,15 +127,15 @@ export default function GaleriaPage() {
                         <div className="grid grid-cols-2 gap-4">
                             <div className="space-y-4">
                                 <div className="h-[300px] relative rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                                    <Image src="/t1-model.avif" alt="Material 1" fill className="object-cover" />
+                                    <Image src="/t1-model-v2.avif" alt="Material 1" fill className="object-cover" />
                                 </div>
                                 <div className="h-[200px] relative rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                                    <Image src="/t2-model.avif" alt="Material 2" fill className="object-cover" />
+                                    <Image src="/t2-model-v2.avif" alt="Material 2" fill className="object-cover" />
                                 </div>
                             </div>
                             <div className="space-y-4 pt-12">
                                 <div className="h-[200px] relative rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                                    <Image src="/t-multi-model.avif" alt="Material 3" fill className="object-cover" />
+                                    <Image src="/t-multi-model-v2.avif" alt="Material 3" fill className="object-cover" />
                                 </div>
                                 <div className="h-[300px] relative rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
                                     <Image src="/interior-living-new.avif" alt="Material 4" fill className="object-cover" />
