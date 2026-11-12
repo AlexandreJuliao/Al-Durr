@@ -77,6 +77,11 @@ export default function Footer() {
                         </div>
                         <p className="hover:text-aldurr-text-body transition-colors">&copy; {new Date().getFullYear()} Al Durr Architecture.</p>
                         <p className="text-[10px] mt-2 uppercase tracking-widest opacity-50">All rights reserved.</p>
+                        <p className="text-[11px] mt-4 opacity-70">Reporlar Construções, Lda · NIPC 516583409</p>
+                        <p className="text-[11px] mt-1 opacity-70">
+                            Empresa do Grupo Tatiérica, com a{" "}
+                            <a href="https://seguros.tatierica.pt/" target="_blank" rel="noopener noreferrer" className="underline decoration-white/20 underline-offset-2 hover:text-aldurr-text-body transition-colors">Tatiérica Seguros</a>.
+                        </p>
                     </div>
                 </div>
             </div>
