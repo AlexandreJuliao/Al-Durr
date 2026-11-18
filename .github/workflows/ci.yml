@@ -1,4 +1,4 @@
-# Portão mínimo do site: um PR só entra se o build passar. É o que o robô das
+# Portão mínimo do site: um PR só entra se o lint e o build passarem. É o que o robô das
 # tarefas (OpenProject) espera para fundir sozinho.
 name: CI
 
@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   verificar:
-    name: Instalar · Build
+    name: Instalar · Lint · Build
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -30,11 +30,7 @@ jobs:
 
       - run: npm ci
 
-      # O lint está de fora de propósito: a 18/11/2026 `npm run lint` falha em
-      # `main` com 4 erros (@typescript-eslint/no-explicit-any, em
-      # src/lib/fpixel.ts) e 2 avisos (<img> em src/app/layout.tsx). Corrigir
-      # isso é mexer no código da aplicação, fora do âmbito do CI. Quando
-      # estiver limpo, acrescentar aqui `- run: npm run lint`.
+      - run: npm run lint
 
       # O site não precisa de variáveis de ambiente para construir (confirmado
       # num clone limpo sem nenhuma). Sem segredos neste workflow.

@@ -61,7 +61,10 @@ export default function RootLayout({
           `}
         </Script>
         <noscript>
+          {/* Pixel de rastreio 1×1 sem JavaScript: o next/image não serve aqui. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
+            alt=""
             height="1"
             width="1"
             style={{ display: "none" }}
