@@ -82,6 +82,10 @@ export default function Footer() {
                             Empresa do Grupo Tatiérica, com a{" "}
                             <a href="https://seguros.tatierica.pt/" target="_blank" rel="noopener noreferrer" className="underline decoration-white/20 underline-offset-2 hover:text-aldurr-text-body transition-colors">Tatiérica Seguros</a>.
                         </p>
+                        <p className="text-[10px] mt-4 opacity-50">
+                            Site por{" "}
+                            <a href="https://www.pardus-lab.com/" target="_blank" rel="noopener" className="hover:text-aldurr-text-body transition-colors">Pardus</a>
+                        </p>
                     </div>
                 </div>
             </div>
